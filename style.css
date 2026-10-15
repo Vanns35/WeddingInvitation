@@ -1212,7 +1212,7 @@ body {
   outline: 0;
   background: transparent;
   box-shadow: none;
-  translate: 0 5svh;
+  translate: 0 0;
 }
 .cover-panel::before,
 .cover-panel::after { display: none; }
