@@ -1179,11 +1179,26 @@ body {
 
 /* Entry invitation cover — center the existing welcome copy on its portrait artwork. */
 .js .invitation-cover {
+  position: fixed;
+  isolation: isolate;
   padding: 0;
   background: #f5ebdd;
   background-image: none;
 }
+.js .invitation-cover::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 50%;
+  width: min(100%, 500px);
+  height: 100%;
+  background: #f5ebdd url('assets/images/Invitation.png') center top / cover no-repeat;
+  content: '';
+  transform: translateX(-50%);
+}
 .cover-panel {
+  position: relative;
+  z-index: 1;
   width: min(100%, 500px);
   height: 100svh;
   min-height: 0;
@@ -1191,13 +1206,9 @@ body {
   padding: clamp(1rem, 3vh, 1.6rem) clamp(1.1rem, 5vw, 2rem);
   border: 0;
   outline: 0;
-  background-color: #f5ebdd;
-  background-image: url('assets/images/Invitation.png');
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: transparent;
   box-shadow: none;
-  translate: 0 -4svh;
+  translate: 0 -7svh;
 }
 .cover-panel::before,
 .cover-panel::after { display: none; }
@@ -1214,7 +1225,7 @@ body {
 .button--cover { min-height: 46px; padding: .65rem 1.1rem; font-size: .82rem; }
 .cover-panel__bottomline { margin-top: .7rem; }
 @media (max-width: 350px) and (max-height: 700px) {
-  .cover-panel { padding-inline: 1.1rem; padding-block: .75rem; translate: 0 -3svh; }
+  .cover-panel { padding-inline: 1.1rem; padding-block: .75rem; translate: 0 -5svh; }
   .cover-panel__ganpati-frame { width: 62px; height: 62px; }
   .cover-panel__mantra { font-size: 1.2rem; }
   .cover-panel__shloka { font-size: .78rem; }
