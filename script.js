@@ -13,7 +13,7 @@ const WEDDING = {
   dateLabel: "9th & 10th December 2026",
   venue: "Fort JadhavGadh",
   address: "Hadapsar Saswad- jejuri road, Maharashtra",
-  directionsUrl: "https://maps.app.goo.gl/Rpm3NE33j8dtgdB59?g_st=iw",
+  directionsUrl: "https://maps.app.goo.gl/4GjqvfmjjUvxLYTUA",
   audioSrc: "assets/audio/kulakovka-indian-295883.mp3", // Local wedding music track.
   events: [
     {
@@ -113,6 +113,12 @@ WEDDING.events.forEach((event) => {
 
 const directionsLink = document.getElementById('directions-link');
 const directionsHint = document.getElementById('directions-hint');
+const venueNote = document.getElementById('venue-note');
+const weddingNote = WEDDING.events.find((event) => event.theme === 'wedding')?.note;
+if (weddingNote) {
+  venueNote.textContent = weddingNote;
+  venueNote.hidden = false;
+}
 if (WEDDING.directionsUrl.trim()) {
   directionsLink.href = WEDDING.directionsUrl.trim();
   directionsLink.hidden = false;

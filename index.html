@@ -109,17 +109,18 @@
       </section>
 
       <section class="venue-page page-section" id="venue" aria-labelledby="venue-heading">
-        <section class="venue-card reveal">
-          <div class="venue-card__ornament" aria-hidden="true">❧</div>
-          <p class="eyebrow">Join us here</p>
-          <h2 class="script-heading" id="venue-heading">Venue &amp; Location</h2>
-          <h3 class="venue-card__name" data-copy="venue">Wedding Venue</h3>
-          <p class="venue-card__address" data-copy="address">Venue address to be announced</p>
-          <a class="button button--outline" id="directions-link" href="#venue" target="_blank" rel="noopener noreferrer" hidden>
-            <span aria-hidden="true">↗</span> View On Google Maps
+        <div class="venue-content reveal">
+          <p class="eyebrow venue-content__eyebrow">The Wedding Venue</p>
+          <h2 class="venue-content__name" id="venue-heading" data-copy="venue">Fort JadhavGadh</h2>
+          <span class="venue-content__rule" aria-hidden="true"></span>
+          <p class="venue-content__address" data-copy="address">Hadapsar Saswad- jejuri road, Maharashtra</p>
+          <a class="button button--outline venue-content__map" id="directions-link" href="#venue" target="_blank" rel="noopener noreferrer" hidden>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            View on Google Maps
           </a>
-          <p class="venue-card__hint" id="directions-hint">Directions link will be added soon.</p>
-        </section>
+          <p class="venue-content__note" id="venue-note" hidden></p>
+          <p class="venue-content__hint" id="directions-hint">Directions link will be added soon.</p>
+        </div>
       </section>
 
       <section class="rsvp-section" id="rsvp" aria-labelledby="rsvp-heading">
