@@ -178,9 +178,6 @@ if ('IntersectionObserver' in window) {
   revealElements.forEach((element) => element.classList.add('is-visible'));
 }
 
-const heroPhoto = document.querySelector('.hero__photo');
-heroPhoto.addEventListener('error', () => heroPhoto.classList.add('is-unavailable'));
-
 const ambientVideos = document.querySelectorAll('.celebration__video, .rsvp-section__video');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 if ('IntersectionObserver' in window && !reducedMotion.matches) {

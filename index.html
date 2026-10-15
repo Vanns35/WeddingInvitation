@@ -25,9 +25,7 @@
   <div class="page-shell">
     <main id="invitation">
       <section class="opening-page page-section" id="opening-page" aria-labelledby="hero-title">
-      <section class="hero" aria-labelledby="hero-title" id="home">
-        <!-- TEMPORARY ART: replace this Unsplash photo with approved Fort JadhavGadh / palace artwork. -->
-        <img class="hero__photo" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=85" alt="A romantic outdoor wedding celebration beneath a floral arch" fetchpriority="high">
+      <section class="hero main-invitation" aria-labelledby="hero-title" id="home">
         <div class="hero__toran" aria-hidden="true"><span>✿</span><span>❀</span><span>✿</span><span>❀</span><span>✿</span></div>
         <div class="hero__inner">
           <p class="eyebrow hero__eyebrow">Together with our families</p>
@@ -60,6 +58,16 @@
       </section>
       </section>
 
+      <section class="event-page event-page--engagement" id="engagement" aria-labelledby="engagement-heading">
+        <div class="engagement-content">
+          <header class="section-heading engagement-heading reveal">
+            <p class="eyebrow">An evening of celebration</p>
+            <h2 class="script-heading" id="engagement-heading">Engagement &amp; Cocktail — 9 December</h2>
+          </header>
+          <div class="event-list" id="event-list-engagement" aria-live="off"></div>
+        </div>
+      </section>
+
       <section class="event-page event-page--haldi haldi-page" id="haldi" aria-labelledby="haldi-heading">
         <div class="haldi-content">
           <header class="section-heading haldi-heading reveal">
@@ -68,16 +76,6 @@
             <p class="section-heading__note">A joyful morning with family and friends.</p>
           </header>
           <div class="event-list" id="event-list-haldi" aria-live="off"></div>
-        </div>
-      </section>
-
-      <section class="event-page event-page--engagement" id="engagement" aria-labelledby="engagement-heading">
-        <div class="engagement-content">
-          <header class="section-heading engagement-heading reveal">
-            <p class="eyebrow">An evening of celebration</p>
-            <h2 class="script-heading" id="engagement-heading">Engagement &amp; Cocktail — 9 December</h2>
-          </header>
-          <div class="event-list" id="event-list-engagement" aria-live="off"></div>
         </div>
       </section>
 
@@ -110,9 +108,7 @@
         <video class="rsvp-section__video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" poster="assets/images/mandala.svg">
           <source src="https://q7pv2gthbvkjs86k.public.blob.vercel-storage.com/general/videos/Green_White_Floral_Traditional_Indian_Wedding_Invitation_Mobile_Video_2_tmsmb6.mp4" type="video/mp4">
         </video>
-        <div class="rsvp-section__scrim" aria-hidden="true"></div>
-        <div class="rsvp-frame reveal">
-          <img class="rsvp-frame__mandala" src="assets/images/mandala.svg" alt="" loading="lazy">
+        <div class="rsvp-content reveal">
           <p class="eyebrow">Kindly respond</p>
           <h2 class="script-heading" id="rsvp-heading">RSVP</h2>
           <span class="rsvp-divider" aria-hidden="true">❖</span>
@@ -132,8 +128,8 @@
         <p data-copy="dateLabel">Your wedding date</p>
         <nav class="site-footer__nav" aria-label="Invitation pages">
           <a href="#home">Invitation</a>
-          <a href="#haldi">Haldi</a>
           <a href="#engagement">Engagement</a>
+          <a href="#haldi">Haldi</a>
           <a href="#wedding-ceremony">Wedding</a>
           <a href="#venue">Venue</a>
           <a href="#rsvp">RSVP</a>
