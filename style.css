@@ -850,3 +850,183 @@ body {
   .venue-content__rule { margin-block: .65rem; }
   .venue-content__note { margin-top: .8rem; }
 }
+
+/* Haldi invitation — centered directly over the supplied portrait artwork. */
+.haldi-page {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(2rem, 6vh, 4rem) clamp(1.5rem, 7vw, 3rem);
+  background-color: #fff6d9;
+  background-image: url('assets/images/Haldi.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.haldi-content { width: 100%; max-width: 390px; margin: 0 auto; color: #513617; text-align: center; }
+.haldi-heading { margin: 0 auto 1rem !important; }
+.haldi-heading .eyebrow { margin-bottom: .55rem; color: #8a5b16; }
+.haldi-heading h2 {
+  display: inline-block;
+  margin: 0;
+  padding: .35rem .5rem .45rem;
+  border-block: 1px solid rgba(164, 112, 29, .65);
+  color: #744514;
+  font: 600 clamp(1.7rem, 7vw, 2.25rem)/1.15 var(--display);
+}
+.haldi-heading .section-heading__note { margin: .75rem auto 0; color: #513617; font-size: clamp(1rem, 3.5vw, 1.12rem); }
+.haldi-page .event-list { width: 100%; max-width: 360px; gap: 0; margin: 0 auto; }
+.haldi-page .event-card {
+  overflow: visible;
+  padding: .25rem .5rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #513617;
+  text-align: center;
+}
+.haldi-page .event-card::before,
+.haldi-page .event-card::after,
+.haldi-page .event-card__date-icon { display: none; }
+.haldi-page .event-card__date { justify-content: center; color: #8a5b16; font: 600 .82rem/1.4 var(--display); letter-spacing: .13em; text-transform: uppercase; }
+.haldi-page .event-card h3 { display: none; }
+.haldi-page .event-card__time { margin: .45rem 0; color: #513617; font-size: 1.12rem; font-weight: 600; }
+.haldi-page .event-card__dress { margin: .65rem auto; padding: .45rem 0; border: 0; border-block: 1px solid rgba(164,112,29,.45); border-radius: 0; background: transparent; color: #513617; font-size: 1rem; }
+.haldi-page .event-card__dress strong { display: block; margin-bottom: .15rem; color: #8a5b16; font: 600 .7rem/1.5 var(--display); letter-spacing: .13em; }
+.haldi-page .event-card__venue { margin: .5rem 0 0; color: #744514; font: 600 .95rem/1.5 var(--display); }
+@media (max-width: 500px) {
+  .haldi-page { padding-inline: 1.25rem; background-position: center center; }
+  .haldi-content { max-width: 355px; }
+  .haldi-page .event-list { max-width: 330px; }
+}
+@media (max-height: 700px) {
+  .haldi-page { padding-block: 1.5rem; }
+  .haldi-heading { margin-bottom: .65rem !important; }
+  .haldi-heading .section-heading__note { margin-top: .5rem; }
+}
+
+/* Engagement invitation — supplied peacock artwork with centered, unboxed copy. */
+.event-page--engagement {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(2rem, 6vh, 4rem) clamp(1.5rem, 7vw, 3rem);
+  background-color: #f5ebdd;
+  background-image: url('assets/images/Engagement.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #4b2631;
+  text-align: center;
+}
+.engagement-content { width: 100%; max-width: 390px; margin: 0 auto; color: #4b2631; text-align: center; }
+.event-page--engagement .engagement-heading { max-width: 390px; margin: 0 auto .9rem !important; }
+.engagement-heading .eyebrow { margin-bottom: .55rem; color: #8c6b3d; }
+.engagement-heading .script-heading {
+  display: inline-block;
+  margin: 0;
+  padding: .35rem .5rem .45rem;
+  border-block: 1px solid rgba(176,141,87,.72);
+  color: #570D32;
+  font: 600 clamp(1.55rem, 6vw, 2.05rem)/1.16 var(--display);
+  text-wrap: balance;
+}
+.event-page--engagement .event-list { width: 100%; max-width: 360px; gap: 0; margin: 0 auto; }
+.event-page--engagement .event-card {
+  overflow: visible;
+  padding: .25rem .5rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #4b2631;
+  text-align: center;
+}
+.event-page--engagement .event-card::before,
+.event-page--engagement .event-card::after,
+.event-page--engagement .event-card__date-icon { display: none; }
+.event-page--engagement .event-card__date { justify-content: center; color: #795a37; font: 600 .82rem/1.4 var(--display); letter-spacing: .13em; text-transform: uppercase; }
+.event-page--engagement .event-card h3 { display: none; }
+.event-page--engagement .event-card__time { margin: .45rem 0; color: #4b2631; font-size: 1.12rem; font-weight: 600; }
+.event-page--engagement .event-card__dress { margin: .65rem auto; padding: .45rem 0; border: 0; border-block: 1px solid rgba(176,141,87,.48); border-radius: 0; background: transparent; color: #4b2631; font-size: 1rem; }
+.event-page--engagement .event-card__dress strong { display: block; margin-bottom: .15rem; color: #795a37; font: 600 .7rem/1.5 var(--display); letter-spacing: .13em; }
+.event-page--engagement .event-card__venue { margin: .5rem 0 0; color: #570D32; font: 600 .95rem/1.5 var(--display); }
+@media (max-width: 500px) {
+  .event-page--engagement { padding-inline: 1.25rem; background-position: center center; }
+  .engagement-content { max-width: 355px; }
+  .event-page--engagement .event-list { max-width: 330px; }
+}
+@media (max-height: 700px) {
+  .event-page--engagement { padding-block: 1.5rem; }
+  .event-page--engagement .engagement-heading { margin-bottom: .65rem !important; }
+}
+
+/* Wedding Ceremony invitation — centered over the supplied portrait artwork. */
+.wedding-page {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(1.75rem, 5vh, 3.5rem) clamp(1.25rem, 6vw, 2.5rem);
+  background-color: #f4e2c8;
+  background-image: url('assets/images/Wedding.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #513328;
+  text-align: center;
+}
+.wedding-content { width: 100%; max-width: 340px; margin: 0 auto; color: #513328; text-align: center; }
+.wedding-heading { max-width: 340px; margin: 0 auto .65rem !important; }
+.wedding-heading .eyebrow { margin-bottom: .4rem; color: #8a6335; }
+.wedding-heading h2 {
+  display: inline-block;
+  margin: 0;
+  padding: .3rem .45rem .38rem;
+  border-block: 1px solid rgba(176,141,87,.68);
+  color: #702334;
+  font: 600 clamp(1.65rem, 6.6vw, 2.2rem)/1.14 var(--display);
+}
+.wedding-page .event-list { width: 100%; max-width: 330px; gap: 0; margin: 0 auto; }
+.wedding-page .event-card {
+  overflow: visible;
+  padding: .15rem .25rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #513328;
+  text-align: center;
+}
+.wedding-page .event-card::before,
+.wedding-page .event-card::after,
+.wedding-page .event-card__date-icon { display: none; }
+.wedding-page .event-card__date { justify-content: center; color: #805c34; font: 600 .76rem/1.4 var(--display); letter-spacing: .12em; text-transform: uppercase; }
+.wedding-page .event-card h3 { display: none; }
+.wedding-page .event-card__time { margin: .25rem 0 .45rem; color: #513328; font-size: 1.02rem; font-weight: 600; }
+.wedding-page .event-card__schedule { display: grid; gap: .45rem; margin: .35rem auto .6rem; padding: 0; border: 0; color: #513328; font-size: .92rem; }
+.wedding-page .event-card__schedule-item { display: grid; grid-template-columns: 1fr; justify-items: center; gap: .05rem; line-height: 1.35; }
+.wedding-page .event-card__schedule-item span:last-child { color: #702334; font-weight: 600; }
+.wedding-page .event-card__dress { margin: .5rem auto; padding: .4rem 0; border: 0; border-block: 1px solid rgba(176,141,87,.45); border-radius: 0; background: transparent; color: #513328; font-size: .92rem; line-height: 1.35; }
+.wedding-page .event-card__dress strong { display: block; margin-bottom: .12rem; color: #805c34; font: 600 .68rem/1.4 var(--display); letter-spacing: .12em; }
+.wedding-page .event-card__venue { margin: .35rem 0 0; color: #702334; font: 600 .9rem/1.4 var(--display); }
+.wedding-page .event-card__note { margin: .45rem auto 0; padding: 0; color: #513328; font: italic 500 .88rem/1.35 var(--serif); }
+@media (max-width: 500px) {
+  .wedding-page { padding-inline: 1.15rem; background-position: center center; }
+  .wedding-content { max-width: 330px; }
+  .wedding-page .event-list { max-width: 315px; }
+  .wedding-page .event-card__schedule { font-size: .88rem; }
+  .wedding-page .event-card__note { font-size: .84rem; }
+}
+@media (max-height: 700px) {
+  .wedding-page { padding-block: 1.25rem; }
+  .wedding-heading { margin-bottom: .4rem !important; }
+  .wedding-page .event-card__schedule { gap: .25rem; margin-block: .25rem .4rem; }
+}
