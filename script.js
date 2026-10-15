@@ -1,14 +1,14 @@
 /*
  * WEDDING DETAILS — customize this section for your invitation.
  * Dates use the ISO 8601 format; include your local UTC offset where possible.
- * Keep RSVP_WHATSAPP empty until you add a real number in international format.
+ * RSVP is informational; the supplied contact numbers are in index.html.
  */
 const WEDDING = {
-  bride: "Bride's Name",
-  groom: "Groom's Name",
-  familyLine1: "Together with their families",
-  familyLine2: "invite you to share their joy",
-  invitationMessage: "With the blessings of our families, we joyfully invite you to celebrate the beginning of our forever.",
+  bride: "Swati",
+  groom: "Pranshu",
+  familyLine1: "Son of Dr. Madhumita Gupta and Mr. Mukul Saurastri",
+  familyLine2: "Daughter of Mrs. Usha Kulkarni and Col. B.B Kulkarni",
+  invitationMessage: "With the blessings of our families, we invite you to join us as we begin our life together.",
   weddingDateISO: "2026-12-10T17:00:00+05:30",
   dateLabel: "9th & 10th December 2026",
   venue: "Fort JadhavGadh",
@@ -19,6 +19,7 @@ const WEDDING = {
     {
       date: "9th December 2026",
       title: "Engagement & Cocktail Ceremony",
+      theme: "engagement",
       time: "7:30 PM",
       dressCode: "Classic western formals in Black or Red colour",
       venue: "Lawn No.1"
@@ -26,6 +27,7 @@ const WEDDING = {
     {
       date: "10th December 2026",
       title: "Haldi Ceremony",
+      theme: "haldi",
       time: "10:30 AM",
       dressCode: "Bright comfortable and casual ethnic wear in shades of yellow",
       venue: "Pool Side"
@@ -33,6 +35,7 @@ const WEDDING = {
     {
       date: "10th December 2026",
       title: "Wedding Ceremony",
+      theme: "wedding",
       time: "5:00 PM Onwards",
       schedule: [
         { title: "Assembly of Baraat", time: "5:00 PM" },
@@ -61,7 +64,7 @@ document.querySelectorAll('[data-copy]').forEach((element) => {
   if (value) element.textContent = value;
 });
 
-document.title = `The Wedding of ${WEDDING.bride} & ${WEDDING.groom}`;
+document.title = `The Wedding of ${WEDDING.groom} & ${WEDDING.bride}`;
 const metaDescription = document.querySelector('meta[name="description"]');
 if (metaDescription) metaDescription.content = `Join ${WEDDING.bride} and ${WEDDING.groom} as they celebrate their wedding.`;
 const socialTitle = document.querySelector('meta[property="og:title"]');
@@ -78,14 +81,14 @@ const makeElement = (tag, className, text) => {
 };
 
 WEDDING.events.forEach((event) => {
-  const card = makeElement('article', 'event-card reveal');
+  const card = makeElement('article', `event-card event-card--${event.theme || 'classic'} reveal`);
   const date = makeElement('div', 'event-card__date');
-  date.append(makeElement('span', 'event-card__date-icon', '▦'), document.createTextNode(event.date));
+  date.append(makeElement('span', 'event-card__date-icon', '❀'), document.createTextNode(event.date));
   const title = makeElement('h3', '', event.title);
-  const time = makeElement('p', 'event-card__time', `◷  ${event.time}`);
+  const time = makeElement('p', 'event-card__time', event.time);
   const dress = makeElement('div', 'event-card__dress');
-  dress.append(makeElement('strong', '', '✨ Dress Code'), document.createTextNode(event.dressCode));
-  const venue = makeElement('p', 'event-card__venue', `⌖  ${event.venue}`);
+  dress.append(makeElement('strong', '', 'Dress Code'), document.createTextNode(event.dressCode));
+  const venue = makeElement('p', 'event-card__venue', event.venue);
   card.append(date, title, time);
   if (event.schedule?.length) {
     const schedule = makeElement('div', 'event-card__schedule');
@@ -98,7 +101,7 @@ WEDDING.events.forEach((event) => {
   }
   card.append(dress, venue);
   if (event.note) {
-    card.append(makeElement('p', 'event-card__note', `💡 Note for our guests: ${event.note}`));
+    card.append(makeElement('p', 'event-card__note', `Note for our guests: ${event.note}`));
   }
   eventList.append(card);
 });
@@ -166,6 +169,23 @@ if ('IntersectionObserver' in window) {
 
 const heroPhoto = document.querySelector('.hero__photo');
 heroPhoto.addEventListener('error', () => heroPhoto.classList.add('is-unavailable'));
+
+const ambientVideos = document.querySelectorAll('.celebration__video, .rsvp-section__video');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+if ('IntersectionObserver' in window && !reducedMotion.matches) {
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(() => {});
+      } else {
+        entry.target.pause();
+      }
+    });
+  }, { rootMargin: '180px 0px' });
+  ambientVideos.forEach((video) => videoObserver.observe(video));
+} else {
+  ambientVideos.forEach((video) => video.pause());
+}
 
 const musicButton = document.getElementById('music-toggle');
 const audio = document.getElementById('wedding-audio');

@@ -2,30 +2,33 @@
 
 A responsive, romantic wedding invitation made with plain HTML, CSS and vanilla JavaScript. It has no build step, backend, or required packages and can be hosted directly on GitHub Pages.
 
-> **Important:** Couple names are still placeholders. Update them in `script.js` before publishing. RSVP is informational only; guests can call the listed contact numbers.
+> **Draft preview:** Couple names, ceremonies, venue, map link and contact numbers use the supplied details. Family relationship lines use the names/titles visible in the linked reference; please confirm spelling and preferred titles before final approval. RSVP is informational only; guests can call the listed numbers.
 
 ## Project files
 
-- `index.html` — semantic page structure, SEO/social metadata and type loading.
-- `style.css` — responsive styling, animations, color/type variables and reduced-motion support.
-- `script.js` — the editable `WEDDING` configuration, event cards, countdown, reveal effects and music.
-- `assets/images/mandala.svg` — original lightweight decorative illustration and favicon.
+- `index.html` — semantic page structure, SEO/social metadata, cover and decorative video backdrops.
+- `style.css` — responsive royal Indian-inspired styling, event-specific colors, animations and reduced-motion support.
+- `script.js` — the editable `WEDDING` configuration, event cards, countdown, reveal effects, lazy video playback and music.
+- `assets/images/mandala.svg` — original lightweight diya illustration and favicon.
+- `assets/images/Ganpati.jpeg` — Ganpati cover artwork.
+- `assets/images/jharokha-frame.svg` — original transparent architectural frame used around the cover, hero, venue, and RSVP copy.
 - `assets/audio/` — optional folder for a music file you have permission to use.
 
 ## Customize the invitation
 
 Open `script.js` and edit the `WEDDING` object at the top:
 
-1. Replace `bride`, `groom`, `brideFamily`, `groomFamily` and `invitationMessage`.
-2. Set `weddingDateISO` to an ISO date/time with the correct local UTC offset, such as `2027-02-14T17:00:00+05:30`. Update the human-readable `dateLabel` to match. The countdown uses the ISO value.
+1. Confirm/update `bride`, `groom`, `familyLine1`, `familyLine2` and `invitationMessage`.
+2. Set `weddingDateISO` to the exact main ceremony ISO date/time with the correct local UTC offset. Update the human-readable `dateLabel` to match. The countdown uses the ISO value.
 3. Replace `venue`, `address` and optionally `directionsUrl` with a Google Maps directions link. Leave the URL blank to keep the button hidden.
-4. Edit the `events` array. Each event has `date`, `title`, `time`, `description`, `dressCode`, and `venue` fields. Add/remove objects as needed.
+4. Edit the `events` array. Each event has `date`, `title`, `theme`, `time`, `dressCode`, and `venue`; the wedding ceremony can also include `schedule` and `note` fields.
 5. The RSVP section displays the supplied contact numbers as tap-to-call links. There is no RSVP form or response storage.
 6. The audio control uses `assets/audio/kulakovka-indian-295883.mp3` by default. Music starts when a guest opens the invitation (a deliberate tap/click), and the floating control toggles it off/on. To use another track, change `audioSrc` in `script.js` to a public audio URL or a relative asset path. If the media cannot load, playback stays off and the page remains usable.
+7. The supplied MP4 provides muted decorative backgrounds behind the events and RSVP sections. They play only near the viewport and pause offscreen; they are hidden when reduced motion is requested. An internet connection is required for these backgrounds.
 
-To use your own photos, replace the hero image URL in `index.html` with a relative path such as `assets/images/couple.jpg`, and update its alt text. Add optimized JPG/WebP images to `assets/images/`; keep the hero reasonably compressed and provide descriptive alt text. The current hero uses an external Unsplash image, so a local image is recommended for reliable/offline hosting. Social preview metadata in `index.html` should also be updated if you change the hero image.
+**Temporary artwork to replace:** In `index.html`, `.hero__photo` currently points to `https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=85`; replace its `src` with an approved local palace/Fort photo such as `assets/images/fort-jadhavgadh.jpg`, and update its `alt`. Both `.celebration__video` and `.rsvp-section__video` use the temporary `Green_White_Floral_Traditional_Indian_Wedding_Invitation_Mobile_Video_2_tmsmb6.mp4` URL; replace each `<source src>` with approved local video or image artwork. Also update `og:image` in the `<head>` when replacing the hero artwork. The new transparent jharokha line-art is original and local at `assets/images/jharokha-frame.svg`.
 
-Colors and fonts are defined at the top of `style.css` in `:root`. Google Fonts are optional; the CSS includes local serif fallbacks. The small mandala illustration is an original SVG and can be replaced with your own optimized decorative SVG.
+Colors and fonts are defined at the top of `style.css` in `:root`. Google Fonts are optional; the CSS includes local serif fallbacks. The Ganpati image and jharokha frame are separate assets in `assets/images/`.
 
 ## Publish with GitHub Pages
 
@@ -43,8 +46,8 @@ Colors and fonts are defined at the top of `style.css` in `:root`. Google Fonts 
 - **Countdown is wrong:** Verify the ISO date, time and UTC offset in `weddingDateISO`, and ensure `dateLabel` matches. The countdown displays the visitor's remaining time to that instant.
 - **Directions are missing:** Add a valid Google Maps directions URL to `directionsUrl`. It is intentionally hidden when blank.
 - **Music does not play:** Add the MP3 at the configured path and test after a user presses the music button. Mobile browsers block autoplay; this invitation never starts audio without a tap.
-- **External hero image or Google Fonts unavailable:** The site still works with a CSS background fallback and system fonts. For reliable performance, put your own optimized photo in `assets/images/` and use local assets.
+- **External video or Google Fonts unavailable:** The invitation remains readable on its warm-ivory background and uses local serif fallbacks. For a reliable, on-brand result, replace the temporary hero photo and both MP4 source URLs with approved local artwork.
 
 ## Accessibility and privacy notes
 
-The page supports keyboard focus, semantic headings/landmarks, reduced-motion preferences, descriptive photo alt text and responsive layouts. RSVP fields are not transmitted or saved by the website itself: only when configured does the form create a WhatsApp draft that the guest chooses whether to send. Do not collect private guest details on a public static site without an appropriate, disclosed service.
+The page supports keyboard focus, semantic headings/landmarks, reduced-motion preferences, descriptive photo alt text and responsive layouts. The RSVP panel only displays contact information; it has no form or response storage.

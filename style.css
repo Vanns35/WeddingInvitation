@@ -1,19 +1,20 @@
 :root {
   color-scheme: light;
-  --ivory: #f7f2e9;
-  --paper: #fffdf8;
-  --sage: #cadbcf;
-  --sage-dark: #a9c1b0;
-  --pine: #173f3b;
-  --pine-soft: #365c53;
-  --gold: #b99755;
-  --gold-light: #e4d3a8;
-  --ink: #3e4036;
-  --muted: #726e61;
-  --rose: #dca9a0;
+  --ivory: #F5EBDD;
+  --paper: #F5EBDD;
+  --sage: #E7D9B9;
+  --sage-dark: #B08D57;
+  --pine: #1D5B45;
+  --pine-soft: #367254;
+  --gold: #B08D57;
+  --gold-light: #D9A126;
+  --wedding-red: #8B1E2D;
+  --saffron: #D9A126;
+  --ink: #4B3428;
+  --muted: #6A5140;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --display: 'Cinzel', Georgia, serif;
-  --script: 'Allura', 'Brush Script MT', cursive;
+  --script: 'Great Vibes', 'Allura', 'Brush Script MT', cursive;
   --content-width: 850px;
   --shadow: 0 18px 55px rgba(55, 57, 45, .11);
 }
@@ -24,7 +25,7 @@ body {
   margin: 0;
   color: var(--ink);
   background-color: var(--ivory);
-  background-image: radial-gradient(ellipse at 10% 16%, rgba(218, 178, 157, .13), transparent 27%), radial-gradient(ellipse at 88% 55%, rgba(175, 194, 177, .18), transparent 32%), repeating-linear-gradient(135deg, transparent 0 48px, rgba(185, 151, 85, .025) 49px 50px);
+  background-image: repeating-linear-gradient(0deg, transparent 0 5px, rgba(75,52,40,.012) 5px 6px);
   font-family: var(--serif);
   font-size: 18px;
   line-height: 1.55;
@@ -44,17 +45,22 @@ button { color: inherit; }
 .side-ornament--left { left: max(14px, calc((100vw - var(--content-width)) / 2 - 30px)); }
 .side-ornament--right { right: max(14px, calc((100vw - var(--content-width)) / 2 - 30px)); }
 
-.hero { position: relative; isolation: isolate; display: grid; min-height: min(900px, 100svh); min-height: max(740px, 100svh); place-items: center; overflow: hidden; color: var(--pine); text-align: center; background: linear-gradient(145deg, #a5b8a4, #e8d0bd 52%, #6b7966); }
+.hero { position: relative; isolation: isolate; display: grid; min-height: min(900px, 100svh); min-height: max(740px, 100svh); place-items: center; overflow: hidden; color: var(--wedding-red); text-align: center; background: linear-gradient(145deg, #a5b8a4, #e8d0bd 52%, #6b7966); }
 .hero__photo { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; transition: transform 1.3s ease, opacity .6s ease; }
 .hero__photo.is-unavailable { opacity: 0; }
 .hero__veil { position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, rgba(250, 246, 236, .51), rgba(248, 244, 235, .70) 48%, rgba(248, 244, 235, .84)); }
+.hero__toran { position: absolute; z-index: 1; top: 0; left: 50%; display: flex; width: min(76%, 560px); height: 38px; align-items: flex-start; justify-content: space-around; color: var(--saffron); font-size: 1.08rem; transform: translateX(-50%); opacity: .88; }
+.hero__toran::before { position: absolute; top: 6px; left: 0; width: 100%; height: 16px; border-top: 1px solid var(--gold); border-radius: 50%; content: ''; }
+.hero__toran span { position: relative; z-index: 1; text-shadow: 0 1px 0 var(--ivory); animation: toran-sway 3.6s ease-in-out infinite alternate; }
+.hero__toran span:nth-child(even) { margin-top: 9px; color: var(--pine-soft); animation-delay: -.9s; }
 .hero__inner { width: min(100% - 44px, 670px); padding: 5rem 1rem 4.4rem; animation: hero-arrive 1.1s both; }
 .eyebrow { margin: 0 0 .65rem; color: var(--gold); font: 600 .72rem/1.5 var(--display); letter-spacing: .25em; text-transform: uppercase; }
 .hero__eyebrow { color: var(--pine); }
 .hero__title { margin: 0 0 .65rem; font: 400 clamp(4.25rem, 13vw, 8.4rem)/.81 var(--script); letter-spacing: -.025em; }
 .hero__invite { max-width: 570px; margin: 2rem auto 1.75rem; font: 600 clamp(.98rem, 2.5vw, 1.16rem)/1.8 var(--display); letter-spacing: .095em; text-transform: uppercase; }
+.hero__invite { color: #563a34; }
 .couple-names { display: grid; justify-items: center; }
-.couple-names__name { font: 400 clamp(4.3rem, 13vw, 7.2rem)/.84 var(--script); }
+.couple-names__name { color: var(--wedding-red); font: 400 clamp(4.3rem, 13vw, 7.2rem)/.84 var(--script); text-shadow: 0 1px 0 rgba(255,250,240,.75); }
 .couple-names__join { display: flex; align-items: center; gap: 1rem; margin: .5rem 0 .38rem; color: var(--gold); font: 400 2.5rem/.9 var(--script); }
 .couple-names__join span { width: 36px; height: 1px; background: var(--gold); }
 .family-line { margin: 1rem auto 0; font-size: clamp(1.06rem, 3vw, 1.28rem); font-weight: 600; }
@@ -64,13 +70,13 @@ button { color: inherit; }
 .hero__corner { position: absolute; width: 54px; height: 54px; border-color: rgba(185, 151, 85, .8); border-style: solid; }
 .hero__corner--tl { top: 20px; left: 20px; border-width: 1px 0 0 1px; }.hero__corner--tr { top: 20px; right: 20px; border-width: 1px 1px 0 0; }.hero__corner--bl { bottom: 20px; left: 20px; border-width: 0 0 1px 1px; }.hero__corner--br { right: 20px; bottom: 20px; border-width: 0 1px 1px 0; }
 
-.date-section { position: relative; display: grid; min-height: 365px; place-items: center; overflow: hidden; padding: 3.5rem 1rem 4rem; background: var(--sage); text-align: center; }
-.date-section::before, .date-section::after { position: absolute; width: 180px; height: 180px; border: 1px solid rgba(255,255,255,.37); border-radius: 50%; content: ''; }
-.date-section::before { top: -112px; left: -62px; box-shadow: 0 0 0 15px rgba(255,255,255,.08), 0 0 0 31px rgba(255,255,255,.08); }
-.date-section::after { right: -73px; bottom: -118px; box-shadow: 0 0 0 15px rgba(255,255,255,.08), 0 0 0 31px rgba(255,255,255,.08); }
+.date-section { position: relative; display: grid; min-height: 365px; place-items: center; overflow: hidden; padding: 3.5rem 1rem 4rem; background: linear-gradient(145deg, #f0dfb6, #e4d09e 55%, #d6c18c); text-align: center; }
+.date-section::before, .date-section::after { position: absolute; color: rgba(122, 38, 53, .11); font: 5.5rem/1 var(--serif); pointer-events: none; }
+.date-section::before { top: 1.2rem; left: -1.2rem; content: '\273f'; transform: rotate(-18deg); }
+.date-section::after { right: -1rem; bottom: .4rem; content: '\2740'; transform: rotate(14deg); }
 .date-section__inner { position: relative; z-index: 1; width: 100%; }
 .script-heading { margin: 0; color: #755d3c; font: 400 clamp(3.35rem, 10vw, 5.8rem)/1.08 var(--script); }
-.date-section .eyebrow { color: var(--pine-soft); }
+.date-section .eyebrow { color: var(--wedding-red); }
 .date-section__date { margin: 1.25rem 0 .6rem; color: var(--pine); font-size: clamp(1.45rem, 4.5vw, 2.15rem); font-weight: 700; }
 .gold-rule { display: block; width: 70px; height: 2px; margin: 0 auto 1.5rem; background: var(--gold); }
 .countdown { display: flex; justify-content: center; gap: clamp(.42rem, 2vw, 1rem); }
@@ -79,7 +85,10 @@ button { color: inherit; }
 .countdown__unit small { font: 600 clamp(.52rem, 1.8vw, .72rem)/1.4 var(--display); text-transform: uppercase; }
 .countdown__message { min-height: 1.5rem; margin: .8rem 0 0; color: var(--pine); font-size: .95rem; }
 
-.celebration { position: relative; overflow: hidden; padding: 0 1.2rem 5rem; background: linear-gradient(180deg, #fffdf8, #fbf8f0); }
+.celebration { position: relative; isolation: isolate; overflow: hidden; padding: 0 1.2rem 5rem; background: linear-gradient(180deg, #fffaf0, #f8f0e3); }
+.celebration__video, .celebration__scrim { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.celebration__video { object-fit: cover; object-position: center 44%; }
+.celebration__scrim { background: rgba(255, 250, 240, .84); }
 .celebration::before { position: absolute; top: 130px; left: 50%; width: 1px; height: calc(100% - 450px); background: linear-gradient(var(--gold-light), transparent); content: ''; opacity: .55; }
 .celebration__ornament { position: relative; display: flex; height: 235px; align-items: flex-start; justify-content: center; }
 .celebration__ornament img { width: 128px; height: 128px; margin-top: 19px; filter: drop-shadow(0 7px 7px rgba(137, 92, 45, .12)); }
@@ -90,22 +99,29 @@ button { color: inherit; }
 .section-heading .eyebrow { margin-bottom: .1rem; }
 .section-heading__note { max-width: 390px; margin: .5rem auto 0; color: var(--muted); font-size: 1.1rem; }
 .event-list { position: relative; z-index: 1; display: grid; gap: 1.45rem; max-width: 680px; margin: 0 auto 4.2rem; }
-.event-card { position: relative; overflow: hidden; padding: clamp(1.35rem, 5vw, 2.2rem); border: 1px solid #e9dfcb; border-radius: 42px 42px 29px 29px; background: rgba(255,255,255,.91); box-shadow: var(--shadow); }
-.event-card::before { position: absolute; top: 0; left: 15%; width: 70%; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); content: ''; }
-.event-card::after { position: absolute; top: 86px; right: -23px; width: 140px; height: 140px; border: 1px solid rgba(169,193,176,.32); border-radius: 50%; box-shadow: 0 0 0 11px rgba(169,193,176,.06), 0 0 0 23px rgba(169,193,176,.045); content: ''; pointer-events: none; }
-.event-card__date { position: relative; z-index: 1; display: flex; align-items: center; gap: .8rem; color: #765f3d; font: 600 clamp(1.1rem, 3.7vw, 1.5rem)/1.35 var(--display); }
-.event-card__date-icon { display: grid; width: 48px; height: 48px; flex: 0 0 auto; place-items: center; border: 1px solid var(--gold-light); border-radius: 50%; color: var(--gold); font-size: 1.2rem; }
-.event-card h3 { position: relative; z-index: 1; margin: 1.35rem 0 .45rem; padding-bottom: .7rem; border-bottom: 1px solid #e8ddc7; color: #66513a; font: italic 500 clamp(1.65rem, 5.4vw, 2.35rem)/1.15 var(--serif); }
+.event-card { --event-accent: var(--gold); --event-wash: rgba(255, 250, 240, .94); position: relative; overflow: hidden; padding: clamp(1.45rem, 5vw, 2.3rem); border: 1px solid color-mix(in srgb, var(--event-accent), white 60%); border-radius: 46px 46px 26px 26px; background: radial-gradient(ellipse at 50% -8%, color-mix(in srgb, var(--event-accent), transparent 88%), transparent 52%), linear-gradient(145deg, var(--event-wash), rgba(255, 252, 245, .94)); box-shadow: 0 14px 42px rgba(63, 52, 44, .11); }
+.event-card--engagement { --event-accent: #702f3a; --event-wash: rgba(250, 241, 235, .95); }
+.event-card--haldi { --event-accent: #bd781d; --event-wash: rgba(255, 248, 218, .95); }
+.event-card--wedding { --event-accent: #7a2635; --event-wash: rgba(255, 244, 231, .96); }
+.event-card::before { position: absolute; top: 0; left: 15%; width: 70%; height: 3px; background: linear-gradient(90deg, transparent, var(--event-accent), var(--gold-light), var(--event-accent), transparent); content: ''; }
+.event-card::after { position: absolute; top: 2rem; right: .5rem; color: color-mix(in srgb, var(--event-accent), transparent 80%); font: 5.6rem/1 var(--script); content: '\2767'; pointer-events: none; }
+.event-card--engagement::after { top: 2.6rem; right: 1.15rem; width: 72px; height: 48px; font-size: 0; background: radial-gradient(circle at 34% 50%, transparent 0 17px, color-mix(in srgb, var(--event-accent), transparent 40%) 18px 19px, transparent 20px), radial-gradient(circle at 66% 50%, transparent 0 17px, color-mix(in srgb, var(--event-accent), transparent 40%) 18px 19px, transparent 20px); }
+.event-card--haldi::after { display: none; }
+.event-card--wedding::after { content: '\2740'; }
+.event-card__date { position: relative; z-index: 1; display: flex; align-items: center; gap: .8rem; color: var(--event-accent); font: 600 clamp(1.1rem, 3.7vw, 1.5rem)/1.35 var(--display); }
+.event-card__date-icon { display: grid; width: 48px; height: 48px; flex: 0 0 auto; place-items: center; border: 1px solid color-mix(in srgb, var(--event-accent), white 56%); border-radius: 50%; color: var(--event-accent); font-size: 1.2rem; }
+.event-card h3 { position: relative; z-index: 1; margin: 1.2rem 0 .45rem; padding-bottom: .7rem; border-bottom: 1px solid color-mix(in srgb, var(--event-accent), white 78%); color: var(--event-accent); font: italic 600 clamp(1.65rem, 5.4vw, 2.35rem)/1.15 var(--serif); }
 .event-card__time { margin: .8rem 0; color: #564e3f; font-size: 1.15rem; }
 .event-card__description { margin: 0 0 1rem; color: var(--muted); font-size: 1.05rem; }
-.event-card__dress { position: relative; z-index: 1; margin: 1rem 0; padding: .8rem 1rem; border: 1px solid #ecdfc7; border-radius: 16px; background: #faf5e9; }
-.event-card__dress strong { display: block; margin-bottom: .15rem; color: #876d3d; font: 600 .78rem/1.5 var(--display); letter-spacing: .1em; text-transform: uppercase; }
+.event-card__dress { position: relative; z-index: 1; margin: 1rem 0; padding: .8rem 1rem; border: 1px solid color-mix(in srgb, var(--event-accent), white 82%); border-radius: 13px; background: color-mix(in srgb, var(--event-accent), white 94%); }
+.event-card__dress strong { display: block; margin-bottom: .15rem; color: var(--event-accent); font: 600 .78rem/1.5 var(--display); letter-spacing: .1em; text-transform: uppercase; }
 .event-card__venue { margin: .7rem 0 0; color: #565043; font-size: 1.04rem; font-weight: 600; }
 .event-card__schedule { display: grid; gap: .35rem; margin: .8rem 0; padding-left: 1rem; border-left: 1px solid var(--gold-light); color: var(--muted); font-size: .98rem; }
 .event-card__schedule-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .75rem; align-items: baseline; }
 .event-card__note { position: relative; z-index: 1; margin: 1rem 0 0; padding: .75rem .9rem; border-radius: 12px; background: rgba(235, 223, 194, .45); color: #685b43; font-size: .96rem; }
 
-.venue-card { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 2.5rem 1.4rem 2.8rem; overflow: hidden; border: 1px solid #e7dbc4; border-radius: 32px; background: linear-gradient(145deg, #f8f4eb, #fffdf8); text-align: center; box-shadow: 0 12px 40px rgba(65, 60, 45, .07); }
+.venue-card { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 2.5rem 1.4rem 2.8rem; overflow: hidden; border: 1px solid #d4bb82; border-radius: 34px 34px 16px 16px; background: repeating-linear-gradient(45deg, transparent 0 14px, rgba(173,133,69,.035) 14px 15px), linear-gradient(145deg, #f8f0df, #fffaf0); text-align: center; box-shadow: 0 12px 40px rgba(65, 60, 45, .1); }
+.venue-card::before { position: absolute; inset: 11px; border: 1px solid rgba(173,133,69,.35); border-radius: 26px 26px 10px 10px; content: ''; pointer-events: none; }
 .venue-card__ornament { position: absolute; top: -4rem; right: .4rem; color: rgba(185,151,85,.14); font: 8rem var(--script); transform: rotate(-24deg); }
 .venue-card .eyebrow, .venue-card h2, .venue-card h3, .venue-card p, .venue-card a { position: relative; }
 .venue-card__name { margin: .65rem 0 .15rem; color: var(--pine); font: 600 1.55rem var(--display); }
@@ -119,12 +135,12 @@ button { color: inherit; }
 .rsvp-section__video, .rsvp-section__scrim { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; }
 .rsvp-section__video { object-fit: cover; object-position: center; }
 .rsvp-section__scrim { z-index: 0; background: rgba(247, 242, 233, .64); }
-.rsvp-frame { position: relative; z-index: 1; width: min(100%, 560px); padding: 3.3rem clamp(1.2rem, 6vw, 3rem); overflow: hidden; border: 1px solid rgba(185,151,85,.62); outline: 1px solid rgba(185,151,85,.3); outline-offset: -9px; background: rgba(255,253,248,.86); box-shadow: 0 15px 45px rgba(41,35,27,.18); }
+.rsvp-frame { position: relative; z-index: 1; width: min(100%, 560px); padding: 3.3rem clamp(1.2rem, 6vw, 3rem); overflow: hidden; border: 1px solid rgba(173,133,69,.75); outline: 1px solid rgba(173,133,69,.35); outline-offset: -9px; background: rgba(255,250,240,.9); box-shadow: 0 15px 45px rgba(41,35,27,.18); }
 .rsvp-frame__mandala { position: absolute; top: -75px; right: -79px; width: 220px; opacity: .095; pointer-events: none; }
 .rsvp-frame > :not(img) { position: relative; }
 .rsvp-section .script-heading { font-size: clamp(4rem, 12vw, 5.5rem); }
 .rsvp-divider { display: block; margin: .3rem 0 1rem; color: var(--gold); }
-.rsvp-hosts { margin: 0 auto .45rem; color: var(--pine); font-size: 3.0rem; font-weight: 600; }
+.rsvp-hosts { margin: 0 auto .45rem; color: var(--wedding-red); font-size: clamp(1.55rem, 3vw, 2.15rem); font-weight: 600; line-height: 1.2; }
 .rsvp-section__message { max-width: 340px; margin: 0 auto 1.6rem; color: var(--muted); font-size: 1.15rem; }
 .rsvp-contacts { display: flex; justify-content: center; flex-wrap: wrap; gap: .65rem; margin: -.25rem 0 1.5rem; }
 .rsvp-contacts a { display: inline-flex; min-height: 42px; align-items: center; padding: .35rem .85rem; border: 1px solid rgba(185,151,85,.55); border-radius: 99px; background: rgba(255,255,255,.67); color: var(--pine); font-size: 1rem; font-weight: 600; text-decoration: none; }
@@ -146,9 +162,10 @@ button { color: inherit; }
 .cover-panel__topline, .cover-panel__bottomline { color: var(--gold); font: 500 .6rem var(--display); letter-spacing: .18em; text-transform: uppercase; }
 .cover-panel__ganpati-frame { display: grid; width: clamp(105px, 25vw, 142px); height: clamp(105px, 25vw, 142px); flex: 0 0 auto; place-items: center; margin: .75rem 0 .15rem; overflow: hidden; border-radius: 50%; filter: drop-shadow(0 5px 8px rgba(102, 70, 43, .18)); }
 .cover-panel__ganpati { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: contain; mix-blend-mode: multiply; filter: brightness(1.16); transform: translateX(4%); }
-.cover-panel__mantra { margin: .35rem 0 .2rem; color: #765d3d; font-size: clamp(1.45rem, 5vw, 2rem); }
+.cover-panel__mantra { margin: .35rem 0 .2rem; color: var(--wedding-red); font-size: clamp(1.3rem, 4vw, 1.75rem); }
+.cover-panel__shloka { max-width: 340px; margin: .18rem auto .55rem; color: #69543b; font: 500 clamp(.82rem, 2.6vw, 1rem)/1.55 var(--serif); }
 .cover-panel__copy { margin: .2rem 0 .65rem; color: var(--muted); font: 500 .67rem var(--display); letter-spacing: .18em; text-transform: uppercase; }
-.cover-panel__names { margin: 0; color: var(--pine); font: 400 clamp(3.1rem, 10vw, 4.3rem)/.8 var(--script); }.cover-panel__names i { display: block; margin: .3rem 0; color: var(--gold); font-size: .55em; font-weight: 400; }
+.cover-panel__names { display: grid; justify-items: center; gap: .08rem; margin: 0; color: var(--wedding-red); font: 400 clamp(3.1rem, 10vw, 4.3rem)/.9 var(--script); }.cover-panel__names i { display: block; margin: 0; color: var(--gold); font-size: .42em; font-weight: 400; line-height: .85; }
 .cover-panel__date { margin: 1.1rem 0 1.25rem; color: var(--ink); font-size: 1.06rem; font-weight: 600; }
 .button--cover { border-color: var(--pine); background: var(--pine); color: white; }.button--cover:hover { background: #23574f; }
 .cover-panel__bottomline { margin-top: 1.35rem; }
@@ -160,6 +177,7 @@ button { color: inherit; }
 @keyframes hero-arrive { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes scroll-dot { 0% { transform: translate(-50%,0); opacity: 1; } 85%,100% { transform: translate(-50%,10px); opacity: 0; } }
 @keyframes music-pulse { to { transform: scale(1.12); } }
+@keyframes toran-sway { from { transform: rotate(-4deg); } to { transform: rotate(4deg); } }
 
 @media (min-width: 851px) {
   .hero { width: 100vw; height: 100svh; min-height: 100svh; margin-inline: calc((100% - 100vw) / 2); }
@@ -187,6 +205,7 @@ button { color: inherit; }
   .hero { min-height: max(720px, 100svh); }
   .hero__inner { width: calc(100% - 34px); padding: 4.5rem .45rem 4rem; }
   .hero__invite { margin: 1.45rem auto 1.25rem; font-size: .88rem; letter-spacing: .065em; }
+  .hero__toran { width: 80%; font-size: .92rem; }
   .couple-names__name { font-size: clamp(2.65rem, 12vw, 3.9rem); white-space: nowrap; }
   .family-line { font-size: .96rem; }
   .hero__corner { width: 35px; height: 35px; }.hero__corner--tl { top: 13px; left: 13px; }.hero__corner--tr { top: 13px; right: 13px; }.hero__corner--bl { bottom: 13px; left: 13px; }.hero__corner--br { right: 13px; bottom: 13px; }
@@ -198,6 +217,7 @@ button { color: inherit; }
   .event-card { border-radius: 32px 32px 22px 22px; }
   .rsvp-section { min-height: 0; padding: 3.6rem 1rem; }
   .rsvp-frame { padding-block: 2.8rem; }
+  .rsvp-hosts { font-size: clamp(1.55rem, 7vw, 2rem); line-height: 1.15; }
   .music-toggle { right: 14px; bottom: max(14px, env(safe-area-inset-bottom)); width: 54px; height: 54px; }
 }
 @media (max-width: 350px) {
@@ -209,4 +229,360 @@ button { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
+  .celebration__video, .rsvp-section__video { display: none; }
+}
+
+/* Royal stationery refinement: open paper, jharokha linework, and restrained color. */
+body {
+  color: var(--ink);
+  background: var(--ivory);
+  background-image: repeating-linear-gradient(0deg, transparent 0 5px, rgba(75,52,40,.012) 5px 6px);
+}
+.page-shell { background: var(--ivory); box-shadow: none; }
+.side-ornament { display: none; }
+.eyebrow { color: var(--gold); font-size: .8rem; letter-spacing: .19em; }
+
+/* Cover is an open invitation sheet: artwork frames the typography, no card surface. */
+.invitation-cover {
+  background: var(--ivory);
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(217,161,38,.10), transparent 45%);
+}
+.cover-panel {
+  display: flex;
+  width: min(100%, 650px);
+  height: min(96svh, 1000px);
+  min-height: 0;
+  padding: clamp(3.4rem, 8vh, 6rem) clamp(2.7rem, 9vw, 6.5rem);
+  border: 0;
+  outline: 0;
+  background: url('assets/images/jharokha-frame.svg') center / 100% 100% no-repeat;
+  box-shadow: none;
+}
+.cover-panel::before, .cover-panel::after { display: none; }
+.cover-panel__topline, .cover-panel__bottomline { color: var(--gold); letter-spacing: .14em; }
+.cover-panel__ganpati-frame { width: clamp(88px, 17vw, 126px); height: clamp(88px, 17vw, 126px); margin: .45rem 0 .1rem; filter: none; }
+.cover-panel__mantra { margin: .1rem 0 .18rem; color: var(--wedding-red); }
+.cover-panel__shloka { margin: .12rem auto .35rem; color: var(--ink); }
+.cover-panel__copy { margin: .7rem 0 .75rem; color: var(--pine); letter-spacing: .13em; }
+.cover-panel__names { gap: 0; color: var(--wedding-red); font-size: clamp(3.7rem, 9vw, 5.1rem); line-height: .83; text-shadow: none; }
+.cover-panel__names i { color: var(--gold); }
+.cover-panel__date { margin: .7rem 0 .75rem; color: var(--ink); }
+.button--cover { border: 1px solid var(--gold); border-radius: 0; background: var(--wedding-red); font-size: .76rem; letter-spacing: .1em; }
+.button--cover:hover { background: #6f1723; }
+.cover-note { display: none; }
+
+/* Hero image and invitation typography sit side-by-side rather than on an overlay. */
+.hero {
+  width: 100vw;
+  height: auto;
+  min-height: 100svh;
+  margin-inline: calc((100% - 100vw) / 2);
+  grid-template-columns: minmax(250px, .78fr) minmax(0, 1.22fr);
+  gap: clamp(1rem, 3vw, 2.4rem);
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 5vw, 4rem);
+  color: var(--ink);
+  background: var(--ivory);
+}
+.hero__photo {
+  position: relative;
+  z-index: 0;
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
+  height: min(74svh, 680px);
+  object-position: center;
+  border: 1px solid var(--gold);
+  border-radius: 48% 48% 3px 3px;
+  padding: 7px;
+  background: var(--ivory);
+  box-shadow: none;
+}
+.hero__veil { display: none; }
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  width: 100%;
+  min-height: min(82svh, 760px);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: clamp(4rem, 8vw, 6rem) clamp(2.7rem, 7vw, 5.4rem);
+  background: url('assets/images/jharokha-frame.svg') center / 100% 100% no-repeat;
+  animation: hero-arrive 1.2s both;
+}
+.hero__toran { top: 1.2rem; left: 20%; width: 58%; opacity: .78; }
+.hero__eyebrow { color: var(--pine); }
+.hero__title { color: var(--wedding-red); font-size: clamp(3rem, 5vw, 4.8rem); line-height: .95; }
+.hero__invite {
+  margin: 1.2rem auto;
+  color: var(--ink);
+  font: 500 clamp(1.05rem, 1.7vw, 1.25rem)/1.45 var(--serif);
+  letter-spacing: .015em;
+  text-transform: none;
+}
+.couple-names__name { color: var(--wedding-red); font-size: clamp(3.8rem, 6.3vw, 5.6rem); text-shadow: none; }
+.couple-names__join { margin: .25rem 0; color: var(--gold); }
+.family-line { color: var(--pine); font-size: clamp(.97rem, 1.3vw, 1.12rem); line-height: 1.45; }
+.scroll-cue { color: var(--wedding-red); font-size: .68rem; letter-spacing: .14em; }
+.scroll-cue i { width: 18px; height: 30px; border-color: var(--gold); }
+.scroll-cue i::after { background: var(--wedding-red); }
+.hero__corner { display: none; }
+
+/* Date and countdown are set directly on invitation paper, without modern tiles. */
+.date-section {
+  min-height: 340px;
+  padding: 3.5rem 1rem;
+  background: var(--ivory);
+  border-block: 1px solid rgba(176,141,87,.5);
+}
+.date-section::before, .date-section::after { color: rgba(139,30,45,.13); }
+.script-heading { color: var(--wedding-red); font-size: clamp(3.25rem, 8vw, 5rem); }
+.date-section .eyebrow { color: var(--pine); }
+.date-section__date { color: var(--ink); }
+.gold-rule { height: 1px; background: var(--gold); }
+.countdown { gap: 0; }
+.countdown__unit {
+  width: clamp(66px, 17vw, 112px);
+  min-height: 0;
+  padding: .3rem .55rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--wedding-red);
+}
+.countdown__unit + .countdown__unit { border-left: 1px solid rgba(176,141,87,.55); }
+.countdown__unit small { color: var(--pine); letter-spacing: .08em; }
+.countdown__message { color: var(--pine); }
+
+/* One shared floral-film backdrop across events and RSVP; content remains unboxed. */
+.celebration, .rsvp-section { background-color: var(--ivory); }
+.celebration { padding: 0 clamp(1rem, 5vw, 3.5rem) 4rem; }
+.celebration__video, .rsvp-section__video { filter: brightness(1.16) saturate(.66); }
+.celebration__scrim, .rsvp-section__scrim { display: none; }
+.celebration__ornament { height: 158px; }
+.celebration__ornament img { width: 96px; height: 96px; filter: none; }
+.hanging-diya { height: 126px; padding-top: 102px; color: var(--saffron); }
+.hanging-diya::before { height: 92px; background: var(--gold); }
+.section-heading { margin-bottom: 2rem; }
+.section-heading__note { color: var(--ink); }
+.event-list { gap: 1.45rem; max-width: 720px; margin-bottom: 2.5rem; }
+.event-card {
+  --event-accent: var(--pine);
+  position: relative;
+  overflow: visible;
+  padding: 1.9rem clamp(.5rem, 4vw, 2rem);
+  border: 0;
+  border-top: 1px solid rgba(176,141,87,.65);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-shadow: 0 1px 0 rgba(245,235,221,.8);
+}
+.event-card:last-child { border-bottom: 1px solid rgba(176,141,87,.65); }
+.event-card--engagement { --event-accent: #702f3a; }
+.event-card--haldi { --event-accent: #936312; }
+.event-card--wedding { --event-accent: var(--wedding-red); }
+.event-card::before { top: -1px; left: 34%; width: 32%; height: 1px; background: var(--event-accent); }
+.event-card::after { top: 1.7rem; right: 1rem; color: color-mix(in srgb, var(--event-accent), transparent 78%); font-size: 3.2rem; }
+.event-card--engagement::after { top: 1.6rem; right: 1rem; width: 48px; height: 34px; }
+.event-card--haldi::after { display: none; }
+.event-card__date { color: var(--event-accent); font-family: var(--display); font-size: 1.25rem; }
+.event-card__date-icon { width: 34px; height: 34px; border: 0; border-bottom: 1px solid var(--gold); border-radius: 0; color: var(--saffron); font-size: 1.15rem; }
+.event-card h3 { max-width: 85%; margin: .75rem 0 .25rem; padding: 0; border: 0; color: var(--event-accent); font: 600 clamp(1.8rem, 4vw, 2.4rem)/1.1 var(--serif); }
+.event-card__time { margin: .3rem 0 .8rem; color: var(--ink); font-size: 1.18rem; font-weight: 600; }
+.event-card__dress { margin: .6rem 0; padding: 0 0 0 .8rem; border: 0; border-left: 1px solid var(--gold); border-radius: 0; background: transparent; }
+.event-card__dress strong { color: var(--pine); font: 600 .94rem/1.4 var(--serif); letter-spacing: .04em; text-transform: none; }
+.event-card__venue { margin-top: .4rem; color: var(--pine); font-size: 1.12rem; font-weight: 700; }
+.event-card__schedule { border-left-color: var(--gold); color: var(--ink); }
+.event-card__note { margin-top: .65rem; padding: 0; border-radius: 0; background: transparent; color: var(--ink); }
+
+.venue-card {
+  width: min(100%, 620px);
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4rem clamp(2.5rem, 8vw, 5rem);
+  border: 0;
+  border-radius: 0;
+  background: url('assets/images/jharokha-frame.svg') center / 100% 100% no-repeat;
+  box-shadow: none;
+}
+.venue-card::before { display: none; }
+.venue-card__ornament { top: 1.7rem; right: 2.6rem; color: rgba(29,91,69,.42); font-size: 3rem; }
+.venue-card .eyebrow, .venue-card h2, .venue-card h3, .venue-card p, .venue-card a { z-index: 1; }
+.venue-card__name { color: var(--wedding-red); font-family: var(--display); }
+.venue-card__address { color: var(--ink); }
+.button--outline { border-color: var(--gold); border-radius: 0; color: var(--pine); }
+.button--outline:hover { background: transparent; color: var(--wedding-red); }
+
+.rsvp-section { min-height: 750px; padding: 3.5rem 1rem; }
+.rsvp-frame {
+  width: min(100%, 620px);
+  min-height: 660px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4.7rem clamp(2.6rem, 8vw, 5rem);
+  overflow: visible;
+  border: 0;
+  outline: 0;
+  background: url('assets/images/jharokha-frame.svg') center / 100% 100% no-repeat;
+  box-shadow: none;
+}
+.rsvp-frame__mandala { display: none; }
+.rsvp-section .script-heading { color: var(--wedding-red); }
+.rsvp-divider { color: var(--saffron); }
+.rsvp-hosts { max-width: 420px; color: var(--wedding-red); font: 600 clamp(1.35rem, 3vw, 1.8rem)/1.25 var(--serif); text-shadow: 0 1px var(--ivory); }
+.rsvp-section__message { color: var(--ink); }
+.rsvp-contacts a { border: 0; border-bottom: 1px solid var(--gold); border-radius: 0; background: transparent; color: var(--pine); font-weight: 700; }
+.rsvp-contacts a:hover { background: transparent; color: var(--wedding-red); }
+.rsvp-signoff { color: var(--ink); }
+.rsvp-signoff span { color: var(--pine); }
+.site-footer { background: var(--pine); }
+
+.reveal { transform: translateY(14px); transition-duration: 1s; }
+.event-card.reveal:nth-child(2), .event-card.reveal:nth-child(3) { transition-delay: 0s; }
+.hero__toran span { animation-duration: 6s; }
+.music-toggle { border-color: var(--gold); background: var(--pine); box-shadow: 0 4px 14px rgba(75,52,40,.16); }
+.music-toggle:hover { background: var(--wedding-red); }
+
+@media (min-width: 851px) {
+  .hero__inner { min-height: min(82svh, 760px); }
+}
+@media (max-width: 850px) {
+  .hero {
+    width: 100%;
+    min-height: 0;
+    margin-inline: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 0 1rem 1.8rem;
+  }
+  .hero__photo {
+    grid-column: 1;
+    grid-row: 1;
+    width: min(66%, 300px);
+    height: clamp(180px, 34vh, 280px);
+    margin: 1.5rem auto .3rem;
+    border-radius: 48% 48% 3px 3px;
+  }
+  .hero__inner {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    min-height: 590px;
+    padding: 4.3rem clamp(2.3rem, 10vw, 4.5rem);
+  }
+  .hero__toran { top: 0; left: 50%; width: 66%; }
+  .hero__title { font-size: clamp(2.8rem, 10vw, 4.8rem); }
+  .hero__invite { font-size: 1.12rem; }
+  .couple-names__name { font-size: clamp(3.7rem, 14vw, 5.5rem); }
+  .family-line { font-size: clamp(.95rem, 3.6vw, 1.12rem); }
+}
+@media (max-width: 500px) {
+  .cover-panel { width: 100%; height: min(96svh, 790px); padding: 3.4rem 2.7rem; }
+  .cover-panel__ganpati-frame { width: 86px; height: 86px; }
+  .cover-panel__shloka { font-size: .83rem; }
+  .cover-panel__names { font-size: clamp(3.3rem, 13vw, 4.3rem); }
+  .hero__inner { min-height: 555px; padding: 4rem 2.5rem; }
+  .hero__invite { margin: .8rem auto; font-size: 1.02rem; line-height: 1.4; }
+  .couple-names__name { font-size: clamp(3.4rem, 15vw, 4.9rem); }
+  .family-line { max-width: 245px; margin-top: .45rem; font-size: .9rem; }
+  .celebration__ornament { height: 142px; }
+  .celebration__ornament img { width: 82px; height: 82px; }
+  .event-card { padding: 1.65rem .15rem; }
+  .event-card h3 { max-width: 100%; }
+  .event-card--engagement::after { right: .15rem; width: 38px; }
+  .venue-card { min-height: 370px; padding: 3.6rem 2.6rem; }
+  .rsvp-section { min-height: 0; padding: 2rem .35rem; }
+  .rsvp-frame { min-height: 580px; padding: 3.5rem 2.6rem; }
+  .rsvp-section .script-heading { font-size: 4rem; }
+  .rsvp-hosts { font-size: 1.35rem; }
+}
+@media (max-width: 350px) {
+  .cover-panel { padding-inline: 2.2rem; }
+  .cover-panel__topline, .cover-panel__bottomline { font-size: .52rem; letter-spacing: .1em; }
+  .hero__inner { padding-inline: 2.1rem; }
+  .rsvp-frame { padding-inline: 2.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__toran span { animation: none; }
+  .celebration__video, .rsvp-section__video { display: none; }
+}
+
+/* Restore the previously approved video backdrops and card surfaces. */
+.celebration__video, .rsvp-section__video { filter: none; }
+.celebration__scrim {
+  display: block;
+  background: rgba(255, 250, 240, .84);
+}
+.rsvp-section__scrim {
+  display: block;
+  background: rgba(247, 242, 233, .64);
+}
+.event-card {
+  overflow: hidden;
+  padding: clamp(1.35rem, 5vw, 2.2rem);
+  border: 1px solid #e9dfcb;
+  border-top-color: color-mix(in srgb, var(--event-accent), white 60%);
+  border-radius: 42px 42px 29px 29px;
+  background: rgba(255, 255, 255, .91);
+  box-shadow: 0 14px 42px rgba(63, 52, 44, .11);
+  text-shadow: none;
+}
+.event-card:last-child { border-bottom: 1px solid #e9dfcb; }
+.event-card__dress {
+  margin: 1rem 0;
+  padding: .8rem 1rem;
+  border: 1px solid #ecdfc7;
+  border-radius: 16px;
+  background: #faf5e9;
+}
+.event-card__dress strong { color: var(--event-accent); font-size: .82rem; }
+.event-card__note {
+  margin: 1rem 0 0;
+  padding: .75rem .9rem;
+  border-radius: 12px;
+  background: rgba(235, 223, 194, .45);
+}
+.venue-card {
+  min-height: 0;
+  padding: 2.5rem 1.4rem 2.8rem;
+  border: 1px solid #d4bb82;
+  border-radius: 32px;
+  background: linear-gradient(145deg, #f8f0df, #fffaf0);
+  box-shadow: 0 12px 40px rgba(65, 60, 45, .1);
+}
+.venue-card::before {
+  display: block;
+  inset: 11px;
+  border: 1px solid rgba(173,133,69,.35);
+  border-radius: 22px;
+}
+.rsvp-frame {
+  min-height: 0;
+  padding: 3.3rem clamp(1.2rem, 6vw, 3rem);
+  overflow: hidden;
+  border: 1px solid rgba(173,133,69,.75);
+  outline: 1px solid rgba(173,133,69,.35);
+  outline-offset: -9px;
+  background: rgba(255,250,240,.9);
+  box-shadow: 0 15px 45px rgba(41,35,27,.18);
+}
+.rsvp-frame__mandala { display: block; opacity: .095; }
+@media (max-width: 500px) {
+  .event-card { padding: 1.65rem 1.35rem; border-radius: 32px 32px 22px 22px; }
+  .venue-card { min-height: 0; padding: 2.5rem 1.4rem 2.8rem; }
+  .rsvp-frame { min-height: 0; padding: 3.5rem 2.6rem; }
+  .rsvp-frame__mandala { display: block; }
+}
+@media (max-width: 350px) {
+  .rsvp-frame { padding-inline: 2.2rem; }
 }
