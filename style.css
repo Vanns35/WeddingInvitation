@@ -1214,23 +1214,24 @@ body {
 .cover-panel::after { display: none; }
 .cover-panel__topline,
 .cover-panel__bottomline { color: #805c34; font-size: clamp(.64rem, 2.2vw, .72rem); line-height: 1.5; letter-spacing: .13em; }
-.cover-panel__ganpati-frame { width: clamp(70px, 17vw, 88px); height: clamp(70px, 17vw, 88px); margin: .35rem 0 .1rem; filter: none; }
+.cover-panel__ganpati-frame { width: clamp(80px, 19vw, 100px); height: clamp(80px, 19vw, 100px); margin: .35rem 0 .1rem; filter: none; }
 .cover-panel__ganpati { transform: none; }
-.cover-panel__mantra { margin: .12rem 0 .2rem; font-size: clamp(1.35rem, 4.8vw, 1.75rem); line-height: 1.4; }
-.cover-panel__shloka { max-width: 340px; margin: .15rem auto .45rem; font-size: clamp(.88rem, 3vw, 1.02rem); line-height: 1.5; }
-.cover-panel__copy { margin: .3rem 0 .45rem; font-size: clamp(.68rem, 2.3vw, .76rem); line-height: 1.5; }
+.cover-panel__mantra { margin: .12rem 0 .65rem; font-size: clamp(1.55rem, 5.2vw, 2rem); line-height: 1.4; }
+.cover-panel__shloka { max-width: 340px; margin: .25rem auto .45rem; font-size: clamp(.99rem, 3.35vw, 1.12rem); line-height: 1.5; }
+.cover-panel__copy { margin: .3rem 0 .7rem; font-size: clamp(.68rem, 2.3vw, .76rem); line-height: 1.5; }
 .cover-panel__names { font-size: clamp(3.1rem, 10vw, 3.8rem); line-height: 1.02; }
 .cover-panel__names i { line-height: 1.1; }
 .cover-panel__date { margin: .65rem 0 .75rem; font-size: clamp(1.02rem, 3.5vw, 1.12rem); line-height: 1.45; }
-.button--cover { min-height: 46px; padding: .65rem 1.1rem; font-size: .82rem; }
+.button--cover { min-height: 46px; margin-block: .25rem .35rem; padding: .65rem 1.1rem; font-size: .82rem; }
 .cover-panel__bottomline { margin-top: .7rem; }
 @media (max-width: 350px) and (max-height: 700px) {
   .cover-panel { padding-inline: 1.1rem; padding-block: .75rem; translate: 0 -5svh; }
-  .cover-panel__ganpati-frame { width: 62px; height: 62px; }
-  .cover-panel__mantra { font-size: 1.2rem; }
-  .cover-panel__shloka { font-size: .78rem; }
-  .cover-panel__copy { margin-block: .2rem .3rem; }
+  .cover-panel__ganpati-frame { width: 70px; height: 70px; }
+  .cover-panel__mantra { font-size: 1.35rem; }
+  .cover-panel__shloka { font-size: .88rem; }
+  .cover-panel__copy { margin-block: .2rem .5rem; }
   .cover-panel__names { font-size: 2.8rem; }
   .cover-panel__date { margin-block: .45rem .55rem; font-size: .95rem; }
+  .button--cover { margin-block: .2rem .25rem; }
   .cover-panel__bottomline { margin-top: .45rem; font-size: .56rem; }
 }
