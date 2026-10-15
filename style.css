@@ -1142,7 +1142,7 @@ body {
   background: none;
   color: #493327;
   text-align: center;
-  translate: 0 -5svh;;
+  translate: 0 -5svh;
 }
 .main-invitation .hero__eyebrow { margin: 0 0 .25rem; color: #805c34; font-size: clamp(.78rem, 2.5vw, .9rem); }
 .main-invitation .hero__title { margin: 0 0 .3rem; color: #702334; font-size: clamp(2.7rem, 10vw, 3.6rem); line-height: 1.14; }
@@ -1162,7 +1162,7 @@ body {
 }
 @media (max-height: 700px) {
   .main-invitation { padding-bottom: max(20px, 4svh); }
-  .main-invitation .hero__inner { padding-block: .65rem; gap: .2rem; translate: 0 0; }
+  .main-invitation .hero__inner { padding-block: .65rem; gap: .2rem; translate: 0 -5svh; }
   .main-invitation .hero__title { font-size: clamp(2.35rem, 9vw, 3.1rem); }
   .main-invitation .hero__invite { margin-block: .35rem; font-size: 1rem; }
   .main-invitation .couple-names__name { font-size: clamp(2.85rem, 9.5vw, 3.6rem); }
@@ -1171,7 +1171,7 @@ body {
 }
 @media (max-width: 350px) and (max-height: 700px) {
   .main-invitation { background-size: auto 145%; }
-  .main-invitation .hero__inner { translate: 0 0; }
+  .main-invitation .hero__inner { translate: 0 -5svh; }
   .main-invitation .hero__eyebrow { font-size: .72rem; }
   .main-invitation .hero__title { font-size: 2.25rem; }
   .main-invitation .hero__invite { font-size: .88rem; line-height: 1.4; }
