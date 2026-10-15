@@ -1078,21 +1078,25 @@ body {
 .rsvp-divider { display: block; margin: .65rem 0; color: #9a743d; font-size: 1.1rem; }
 .rsvp-hosts { max-width: 340px; margin: 0 auto .6rem; color: #702334; font: 600 clamp(1.2rem, 4.7vw, 1.6rem)/1.3 var(--serif); }
 .rsvp-section__message { max-width: 330px; margin: 0 auto 1rem; color: #493327; font-size: clamp(1rem, 3.5vw, 1.12rem); }
-.rsvp-contacts { display: grid; justify-content: center; gap: .35rem; margin: .25rem 0 .9rem; }
+.rsvp-contacts { display: flex; justify-content: center; flex-wrap: nowrap; gap: .45rem; margin: .25rem 0 .9rem; }
 .rsvp-contacts a {
-  display: inline-block;
-  min-height: 0;
-  padding: .15rem .25rem;
-  border: 0;
-  border-bottom: 1px solid rgba(176,141,87,.62);
-  border-radius: 0;
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: .4rem .6rem;
+  border: 1px solid #9a743d;
+  border-radius: 999px;
   background: transparent;
   color: #702334;
-  font: 600 1.05rem/1.5 var(--serif);
+  font: 600 1rem/1.3 var(--serif);
+  font-style: normal;
   text-decoration: none;
+  white-space: nowrap;
   text-shadow: inherit;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
 }
-.rsvp-contacts a:hover { background: transparent; color: #493327; }
+.rsvp-contacts a:hover { border-color: #702334; background: #702334; color: #fff8ed; }
 .rsvp-signoff { margin: .8rem 0 0; color: #493327; font: italic 500 1rem/1.5 var(--serif); }
 .rsvp-signoff span { color: #702334; font-weight: 600; }
 @media (max-width: 500px) {
@@ -1222,7 +1226,7 @@ body {
 .cover-panel__names { font-size: clamp(3.1rem, 10vw, 3.8rem); line-height: 1.02; }
 .cover-panel__names i { line-height: 1.1; }
 .cover-panel__date { margin: .65rem 0 .75rem; font-size: clamp(1.02rem, 3.5vw, 1.12rem); line-height: 1.45; }
-.button--cover { min-height: 46px; margin-block: .25rem .35rem; padding: .65rem 1.1rem; font-size: .82rem; }
+.button--cover { min-height: 46px; margin-block: .25rem .35rem; padding: .65rem 1.1rem; border-radius: 10px; font-size: .82rem; }
 .cover-panel__bottomline { margin-top: .7rem; }
 @media (max-width: 350px) and (max-height: 700px) {
   .cover-panel { padding-inline: 1.1rem; padding-block: .75rem; translate: 0 -5svh; }
