@@ -124,7 +124,7 @@ button { color: inherit; }
 .rsvp-frame > :not(img) { position: relative; }
 .rsvp-section .script-heading { font-size: clamp(4rem, 12vw, 5.5rem); }
 .rsvp-divider { display: block; margin: .3rem 0 1rem; color: var(--gold); }
-.rsvp-hosts { margin: 0 auto .45rem; color: var(--pine); font-size: 1.08rem; font-weight: 600; }
+.rsvp-hosts { margin: 0 auto .45rem; color: var(--pine); font-size: 3.0rem; font-weight: 600; }
 .rsvp-section__message { max-width: 340px; margin: 0 auto 1.6rem; color: var(--muted); font-size: 1.15rem; }
 .rsvp-contacts { display: flex; justify-content: center; flex-wrap: wrap; gap: .65rem; margin: -.25rem 0 1.5rem; }
 .rsvp-contacts a { display: inline-flex; min-height: 42px; align-items: center; padding: .35rem .85rem; border: 1px solid rgba(185,151,85,.55); border-radius: 99px; background: rgba(255,255,255,.67); color: var(--pine); font-size: 1rem; font-weight: 600; text-decoration: none; }
@@ -144,7 +144,8 @@ button { color: inherit; }
 .js .invitation-cover.is-open .cover-panel { transform: translateY(-110%); opacity: 0; }
 .cover-panel::before, .cover-panel::after { position: absolute; left: 50%; width: 42%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); content: ''; transform: translateX(-50%); }.cover-panel::before { top: 32px; }.cover-panel::after { bottom: 32px; }
 .cover-panel__topline, .cover-panel__bottomline { color: var(--gold); font: 500 .6rem var(--display); letter-spacing: .18em; text-transform: uppercase; }
-.cover-panel__ganpati { display: block; width: clamp(105px, 25vw, 142px); height: clamp(105px, 25vw, 142px); margin: .75rem 0 .15rem; border-radius: 50%; object-fit: contain; mix-blend-mode: multiply; filter: brightness(1.16) drop-shadow(0 5px 8px rgba(102, 70, 43, .18)); }
+.cover-panel__ganpati-frame { display: grid; width: clamp(105px, 25vw, 142px); height: clamp(105px, 25vw, 142px); flex: 0 0 auto; place-items: center; margin: .75rem 0 .15rem; overflow: hidden; border-radius: 50%; filter: drop-shadow(0 5px 8px rgba(102, 70, 43, .18)); }
+.cover-panel__ganpati { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: contain; mix-blend-mode: multiply; filter: brightness(1.16); transform: translateX(4%); }
 .cover-panel__mantra { margin: .35rem 0 .2rem; color: #765d3d; font-size: clamp(1.45rem, 5vw, 2rem); }
 .cover-panel__copy { margin: .2rem 0 .65rem; color: var(--muted); font: 500 .67rem var(--display); letter-spacing: .18em; text-transform: uppercase; }
 .cover-panel__names { margin: 0; color: var(--pine); font: 400 clamp(3.1rem, 10vw, 4.3rem)/.8 var(--script); }.cover-panel__names i { display: block; margin: .3rem 0; color: var(--gold); font-size: .55em; font-weight: 400; }
