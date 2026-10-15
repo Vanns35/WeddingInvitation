@@ -731,3 +731,43 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .event-page--engagement *, .event-page--engagement *::before, .event-page--engagement *::after { animation: none !important; }
 }
+
+/* Keep the invitation in its portrait/mobile presentation on every device. */
+.page-shell { width: min(100%, 500px); margin-inline: auto; }
+.opening-page,
+.event-page,
+.venue-page,
+.rsvp-section,
+.site-footer { width: 100%; margin-inline: 0; }
+.hero {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  padding: 0 1rem 1.8rem;
+}
+.hero__photo {
+  position: relative;
+  z-index: 0;
+  grid-column: 1;
+  grid-row: 1;
+  width: min(66%, 300px);
+  height: clamp(180px, 34vh, 280px);
+  margin: 1.5rem auto .3rem;
+  border-radius: 48% 48% 3px 3px;
+}
+.hero__inner {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+  min-height: 590px;
+  padding: 4.3rem clamp(2.3rem, 10vw, 4.5rem);
+}
+.hero__title { font-size: clamp(2.8rem, 12vw, 4rem); }
+.couple-names__name { font-size: clamp(3.1rem, 12vw, 4.3rem); }
+.event-page--engagement { padding-inline: clamp(1.25rem, 4vw, 2rem); }
+.engagement-heading .script-heading { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+.hero__toran { top: 0; left: 50%; width: 66%; }
+.music-toggle { right: max(14px, calc((100vw - 500px) / 2 + 14px)); }
