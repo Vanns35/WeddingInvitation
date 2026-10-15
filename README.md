@@ -9,8 +9,8 @@ A responsive, romantic wedding invitation made with plain HTML, CSS and vanilla 
 - `index.html` — semantic page structure, SEO/social metadata, cover and decorative video backdrops.
 - `style.css` — responsive royal Indian-inspired styling, event-specific colors, animations and reduced-motion support.
 - `script.js` — the editable `WEDDING` configuration, event cards, countdown, reveal effects, lazy video playback and music.
-- `assets/images/mandala.svg` — original lightweight diya illustration and favicon.
-- `assets/images/Ganpati.jpeg` — Ganpati cover artwork.
+- `assets/images/mandala.svg` — origsinal lightweight diya illustration and favicon.
+- `assets/images/Ganpati.png` — Ganpati cover artwork.
 - `assets/images/jharokha-frame.svg` — original transparent architectural frame used around the cover, hero, venue, and RSVP copy.
 - `assets/audio/` — optional folder for a music file you have permission to use.
 
