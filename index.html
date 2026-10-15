@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f2e9">
+  <meta name="description" content="A heartfelt invitation to celebrate a beautiful beginning. Join us for the wedding celebration.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A Wedding Invitation">
+  <meta property="og:description" content="With joy in our hearts, we invite you to celebrate our wedding.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>A Wedding Invitation</title>
+  <link rel="icon" href="assets/images/mandala.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#invitation">Skip to invitation</a>
+
+  <div class="page-shell">
+    <div class="side-ornament side-ornament--left" aria-hidden="true"></div>
+    <div class="side-ornament side-ornament--right" aria-hidden="true"></div>
+
+    <main id="invitation">
+      <section class="hero" aria-labelledby="hero-title" id="home">
+        <img class="hero__photo" src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=85" alt="A romantic outdoor wedding celebration beneath a floral arch" fetchpriority="high">
+        <div class="hero__veil" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <p class="eyebrow hero__eyebrow">Together with our families</p>
+          <h1 id="hero-title" class="hero__title">Wedding<br>Celebration</h1>
+          <p class="hero__invite" data-copy="invitationMessage">With the blessings of our families, we joyfully invite you to celebrate the beginning of our forever.</p>
+          <div class="couple-names" aria-label="The happy couple">
+            <span class="couple-names__name" data-copy="groom">Groom's Name</span>
+            <span class="couple-names__join" aria-hidden="true"><span></span> with <span></span></span>
+            <span class="couple-names__name" data-copy="bride">Bride's Name</span>
+          </div>
+          <p class="family-line"><span data-copy="familyLine1">Together with their families</span><br><span data-copy="familyLine2">invite you to share their joy</span></p>
+          <a class="scroll-cue" href="#special-date"><span>Scroll to discover</span><i aria-hidden="true"></i></a>
+        </div>
+        <span class="hero__corner hero__corner--tl" aria-hidden="true"></span>
+        <span class="hero__corner hero__corner--tr" aria-hidden="true"></span>
+        <span class="hero__corner hero__corner--bl" aria-hidden="true"></span>
+        <span class="hero__corner hero__corner--br" aria-hidden="true"></span>
+      </section>
+
+      <section class="date-section" id="special-date" aria-labelledby="date-heading">
+        <div class="section-inner date-section__inner reveal">
+          <p class="eyebrow">A day to remember</p>
+          <h2 class="script-heading" id="date-heading">Our Special Date</h2>
+          <p class="date-section__date" data-copy="dateLabel">Your wedding date</p>
+          <span class="gold-rule" aria-hidden="true"></span>
+          <div class="countdown" aria-label="Countdown to the wedding">
+            <div class="countdown__unit"><span data-count="days">00</span><small>Days</small></div>
+            <div class="countdown__unit"><span data-count="hours">00</span><small>Hours</small></div>
+            <div class="countdown__unit"><span data-count="minutes">00</span><small>Minutes</small></div>
+            <div class="countdown__unit"><span data-count="seconds">00</span><small>Seconds</small></div>
+          </div>
+          <p class="countdown__message" id="countdown-message" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="celebration" id="events" aria-labelledby="events-heading">
+        <div class="celebration__ornament" aria-hidden="true">
+          <span class="hanging-diya hanging-diya--left">✦</span>
+          <img src="assets/images/mandala.svg" alt="" loading="lazy">
+          <span class="hanging-diya hanging-diya--right">✦</span>
+        </div>
+        <header class="section-heading reveal">
+          <p class="eyebrow">The celebration</p>
+          <h2 class="script-heading" id="events-heading">Wedding Events</h2>
+          <p class="section-heading__note">A few beautiful moments, shared with the people we love.</p>
+        </header>
+        <div class="event-list" id="event-list" aria-live="off"></div>
+        <section class="venue-card reveal" id="venue" aria-labelledby="venue-heading">
+          <div class="venue-card__ornament" aria-hidden="true">❧</div>
+          <p class="eyebrow">Join us here</p>
+          <h2 class="script-heading" id="venue-heading">Venue &amp; Location</h2>
+          <h3 class="venue-card__name" data-copy="venue">Wedding Venue</h3>
+          <p class="venue-card__address" data-copy="address">Venue address to be announced</p>
+          <a class="button button--outline" id="directions-link" href="#venue" target="_blank" rel="noopener noreferrer" hidden>
+            <span aria-hidden="true">↗</span> Get Directions
+          </a>
+          <p class="venue-card__hint" id="directions-hint">Directions link will be added soon.</p>
+        </section>
+      </section>
+
+      <section class="rsvp-section" id="rsvp" aria-labelledby="rsvp-heading">
+        <video class="rsvp-section__video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1" poster="assets/images/mandala.svg">
+          <source src="https://q7pv2gthbvkjs86k.public.blob.vercel-storage.com/general/videos/Green_White_Floral_Traditional_Indian_Wedding_Invitation_Mobile_Video_2_tmsmb6.mp4" type="video/mp4">
+        </video>
+        <div class="rsvp-section__scrim" aria-hidden="true"></div>
+        <div class="rsvp-frame reveal">
+          <img class="rsvp-frame__mandala" src="assets/images/mandala.svg" alt="" loading="lazy">
+          <p class="eyebrow">Kindly respond</p>
+          <h2 class="script-heading" id="rsvp-heading">RSVP</h2>
+          <span class="rsvp-divider" aria-hidden="true">❖</span>
+          <p class="rsvp-section__message">We would be delighted to celebrate this special day with you.</p>
+          <form class="rsvp-form" id="rsvp-form">
+            <label for="guest-name">Your name</label>
+            <input id="guest-name" name="name" autocomplete="name" required placeholder="Full name">
+            <label for="attendance">Will you be joining us?</label>
+            <select id="attendance" name="attendance" required>
+              <option value="">Please select</option>
+              <option value="Joyfully accepts">Joyfully accepts</option>
+              <option value="Regretfully declines">Regretfully declines</option>
+            </select>
+            <label for="guest-count">Number of guests</label>
+            <select id="guest-count" name="guests">
+              <option value="1">1 guest</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option>
+            </select>
+            <label for="guest-message">A note for the couple <span>(optional)</span></label>
+            <textarea id="guest-message" name="message" rows="3" placeholder="Write a little message..."></textarea>
+            <button class="button button--filled" type="submit">Send your RSVP <span aria-hidden="true">→</span></button>
+            <p class="rsvp-form__note" id="rsvp-note" role="status">RSVP messages open in WhatsApp and are not stored by this website.</p>
+          </form>
+          <p class="rsvp-signoff">With love,<br><span data-copy="groom">Groom's Name</span> <span aria-hidden="true">&amp;</span> <span data-copy="bride">Bride's Name</span></p>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p class="site-footer__blessing">Blessings &amp; best wishes</p>
+        <p class="site-footer__names"><span data-copy="groom">Groom's Name</span> <span aria-hidden="true">&amp;</span> <span data-copy="bride">Bride's Name</span></p>
+        <p data-copy="dateLabel">Your wedding date</p>
+        <a class="back-to-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
+      </footer>
+    </main>
+
+    <button class="music-toggle" id="music-toggle" type="button" aria-label="Play background music" aria-pressed="false">
+      <span class="music-toggle__icon" aria-hidden="true">♫</span>
+    </button>
+    <audio id="wedding-audio" preload="none" loop></audio>
+    <p class="sr-only" id="music-status" role="status" aria-live="polite"></p>
+  </div>
+
+  <div class="invitation-cover" id="invitation-cover" aria-label="Invitation cover">
+    <div class="cover-panel">
+      <span class="cover-panel__topline">An invitation from the heart</span>
+      <img class="cover-panel__mandala" src="assets/images/mandala.svg" alt="A delicate floral lamp illustration">
+      <p class="cover-panel__mantra" lang="sa">॥ श्री गणेशाय नमः ॥</p>
+      <p class="cover-panel__copy">A new chapter begins</p>
+      <p class="cover-panel__names"><span data-copy="groom">Groom's Name</span><br><i>&amp;</i><br><span data-copy="bride">Bride's Name</span></p>
+      <p class="cover-panel__date" data-copy="dateLabel">Your wedding date</p>
+      <a class="button button--cover" href="#home" id="open-invitation">Open invitation <span aria-hidden="true">↓</span></a>
+      <span class="cover-panel__bottomline">With joy, we invite you to celebrate</span>
+    </div>
+    <p class="cover-note">Tap to begin</p>
+  </div>
+</body>
+</html>

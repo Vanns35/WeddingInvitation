@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Floral diya medallion</title>
+  <desc id="desc">An original line-art medallion with a glowing lamp, leaves and a delicate gold border.</desc>
+  <defs>
+    <radialGradient id="glow"><stop stop-color="#f9d587" stop-opacity=".74"/><stop offset="1" stop-color="#f9d587" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gold" x1="50" y1="40" x2="250" y2="260" gradientUnits="userSpaceOnUse"><stop stop-color="#d8b76d"/><stop offset=".5" stop-color="#a9803e"/><stop offset="1" stop-color="#e6cb89"/></linearGradient>
+    <linearGradient id="flame" x1="150" y1="95" x2="150" y2="169" gradientUnits="userSpaceOnUse"><stop stop-color="#fff0a6"/><stop offset=".53" stop-color="#f5a440"/><stop offset="1" stop-color="#d64b2e"/></linearGradient>
+  </defs>
+  <circle cx="150" cy="150" r="141" stroke="url(#gold)" stroke-width="1.4"/>
+  <circle cx="150" cy="150" r="131" stroke="#b99755" stroke-opacity=".45"/>
+  <circle cx="150" cy="150" r="112" stroke="#b99755" stroke-opacity=".4" stroke-dasharray="2 6"/>
+  <circle cx="150" cy="132" r="94" fill="url(#glow)"/>
+  <g stroke="url(#gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".82">
+    <path d="M150 20c10 19 10 32 0 43-10-11-10-24 0-43ZM150 237c10 13 10 26 0 43-10-17-10-30 0-43ZM20 150c19-10 32-10 43 0-11 10-24 10-43 0ZM237 150c13-10 26-10 43 0-17 10-30 10-43 0Z"/>
+    <path d="M58 58c21 3 31 11 32 26-15-1-23-11-32-26ZM210 216c18 8 25 18 24 33-14-4-21-14-24-33ZM242 58c-3 21-11 31-26 32 1-15 11-23 26-32ZM84 216c-8 18-18 25-33 24 4-14 14-21 33-24Z"/>
+    <path d="M150 50v19m0 162v19M50 150h19m162 0h19M79 79l14 14m114 114 14 14m0-142-14 14M93 207l-14 14"/>
+    <path d="M111 74c-7 19-2 35 15 48 7-19 2-35-15-48ZM189 74c7 19 2 35-15 48-7-19-2-35 15-48ZM111 226c-7-19-2-35 15-48 7 19 2 35-15 48ZM189 226c7-19 2-35-15-48-7 19-2 35 15 48Z"/>
+  </g>
+  <g transform="translate(0 6)">
+    <path d="M150 100c-14 19-14 36 0 51 14-15 14-32 0-51Z" fill="url(#flame)" stroke="#c87937" stroke-width="1.2"/>
+    <path d="M150 124c-7 10-7 18 0 25 7-7 7-15 0-25Z" fill="#fff4bf"/>
+    <path d="M105 164c20 18 70 18 90 0l-12 25c-14 12-52 12-66 0l-12-25Z" fill="#83532f" stroke="url(#gold)" stroke-width="2"/>
+    <path d="M108 164c20 9 64 9 84 0" stroke="#e7bf6b" stroke-width="5" stroke-linecap="round"/>
+    <path d="M144 163c2-8 10-8 12 0" stroke="#5d402a" stroke-width="2"/>
+    <ellipse cx="150" cy="199" rx="45" ry="4" fill="#b99755" opacity=".14"/>
+  </g>
+  <g fill="#c99c53"><circle cx="150" cy="9" r="2.8"/><circle cx="150" cy="291" r="2.8"/><circle cx="9" cy="150" r="2.8"/><circle cx="291" cy="150" r="2.8"/><circle cx="50" cy="50" r="2.5"/><circle cx="250" cy="50" r="2.5"/><circle cx="50" cy="250" r="2.5"/><circle cx="250" cy="250" r="2.5"/></g>
+</svg>
