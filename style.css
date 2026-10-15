@@ -102,6 +102,8 @@ button { color: inherit; }
 .event-card__dress strong { display: block; margin-bottom: .15rem; color: #876d3d; font: 600 .78rem/1.5 var(--display); letter-spacing: .1em; text-transform: uppercase; }
 .event-card__venue { margin: .7rem 0 0; color: #565043; font-size: 1.04rem; font-weight: 600; }
 .event-card__schedule { display: grid; gap: .35rem; margin: .8rem 0; padding-left: 1rem; border-left: 1px solid var(--gold-light); color: var(--muted); font-size: .98rem; }
+.event-card__schedule-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .75rem; align-items: baseline; }
+.event-card__note { position: relative; z-index: 1; margin: 1rem 0 0; padding: .75rem .9rem; border-radius: 12px; background: rgba(235, 223, 194, .45); color: #685b43; font-size: .96rem; }
 
 .venue-card { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 2.5rem 1.4rem 2.8rem; overflow: hidden; border: 1px solid #e7dbc4; border-radius: 32px; background: linear-gradient(145deg, #f8f4eb, #fffdf8); text-align: center; box-shadow: 0 12px 40px rgba(65, 60, 45, .07); }
 .venue-card__ornament { position: absolute; top: -4rem; right: .4rem; color: rgba(185,151,85,.14); font: 8rem var(--script); transform: rotate(-24deg); }
@@ -122,15 +124,11 @@ button { color: inherit; }
 .rsvp-frame > :not(img) { position: relative; }
 .rsvp-section .script-heading { font-size: clamp(4rem, 12vw, 5.5rem); }
 .rsvp-divider { display: block; margin: .3rem 0 1rem; color: var(--gold); }
+.rsvp-hosts { margin: 0 auto .45rem; color: var(--pine); font-size: 1.08rem; font-weight: 600; }
 .rsvp-section__message { max-width: 340px; margin: 0 auto 1.6rem; color: var(--muted); font-size: 1.15rem; }
-.rsvp-form { display: grid; gap: .55rem; text-align: left; }
-.rsvp-form label { margin-top: .45rem; color: var(--pine); font: 600 .72rem/1.4 var(--display); letter-spacing: .06em; }
-.rsvp-form label span { color: var(--muted); font-family: var(--serif); font-weight: 400; letter-spacing: 0; text-transform: none; }
-.rsvp-form input, .rsvp-form select, .rsvp-form textarea { width: 100%; min-height: 48px; padding: .72rem .85rem; border: 1px solid #ddd1bc; border-radius: 8px; background: rgba(255,255,255,.78); color: var(--ink); font-size: 1rem; }
-.rsvp-form textarea { resize: vertical; }
-.rsvp-form .button { margin-top: .8rem; }
-.button--filled { width: 100%; border-color: var(--pine); background: var(--pine); color: white; }.button--filled:hover { background: #23574f; box-shadow: 0 8px 18px rgba(23,63,59,.18); }
-.rsvp-form__note { margin: .25rem 0 0; color: var(--muted); font-size: .85rem; text-align: center; }
+.rsvp-contacts { display: flex; justify-content: center; flex-wrap: wrap; gap: .65rem; margin: -.25rem 0 1.5rem; }
+.rsvp-contacts a { display: inline-flex; min-height: 42px; align-items: center; padding: .35rem .85rem; border: 1px solid rgba(185,151,85,.55); border-radius: 99px; background: rgba(255,255,255,.67); color: var(--pine); font-size: 1rem; font-weight: 600; text-decoration: none; }
+.rsvp-contacts a:hover { background: #f2ead9; }
 .rsvp-signoff { margin: 1.8rem 0 0; color: var(--muted); font-style: italic; }.rsvp-signoff span { color: var(--pine); font-weight: 600; }
 .site-footer { padding: 2.4rem 1rem 2rem; background: var(--pine); color: #f9f3e6; text-align: center; }
 .site-footer p { margin: .25rem 0; font-size: 1rem; }.site-footer__blessing { color: #dac58e; font: 500 .68rem var(--display); letter-spacing: .2em; text-transform: uppercase; }
@@ -146,7 +144,7 @@ button { color: inherit; }
 .js .invitation-cover.is-open .cover-panel { transform: translateY(-110%); opacity: 0; }
 .cover-panel::before, .cover-panel::after { position: absolute; left: 50%; width: 42%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); content: ''; transform: translateX(-50%); }.cover-panel::before { top: 32px; }.cover-panel::after { bottom: 32px; }
 .cover-panel__topline, .cover-panel__bottomline { color: var(--gold); font: 500 .6rem var(--display); letter-spacing: .18em; text-transform: uppercase; }
-.cover-panel__mandala { width: clamp(100px, 26vw, 142px); margin: .85rem 0 .3rem; }
+.cover-panel__ganpati { display: block; width: clamp(105px, 25vw, 142px); height: clamp(105px, 25vw, 142px); margin: .75rem 0 .15rem; border-radius: 50%; object-fit: contain; mix-blend-mode: multiply; filter: brightness(1.16) drop-shadow(0 5px 8px rgba(102, 70, 43, .18)); }
 .cover-panel__mantra { margin: .35rem 0 .2rem; color: #765d3d; font-size: clamp(1.45rem, 5vw, 2rem); }
 .cover-panel__copy { margin: .2rem 0 .65rem; color: var(--muted); font: 500 .67rem var(--display); letter-spacing: .18em; text-transform: uppercase; }
 .cover-panel__names { margin: 0; color: var(--pine); font: 400 clamp(3.1rem, 10vw, 4.3rem)/.8 var(--script); }.cover-panel__names i { display: block; margin: .3rem 0; color: var(--gold); font-size: .55em; font-weight: 400; }

@@ -9,37 +9,38 @@ const WEDDING = {
   familyLine1: "Together with their families",
   familyLine2: "invite you to share their joy",
   invitationMessage: "With the blessings of our families, we joyfully invite you to celebrate the beginning of our forever.",
-  weddingDateISO: "2027-02-14T17:00:00+05:30", // Placeholder date and time — replace this.
-  dateLabel: "14 February 2027 · 5:00 PM", // Placeholder display label — replace this.
-  venue: "Wedding Venue", // Placeholder — replace this.
-  address: "Venue address to be announced", // Placeholder — replace this.
-  directionsUrl: "", // Paste a Google Maps directions URL, for example https://maps.google.com/?q=...
+  weddingDateISO: "2026-12-10T17:00:00+05:30",
+  dateLabel: "9th & 10th December 2026",
+  venue: "Fort JadhavGadh",
+  address: "Hadapsar Saswad- jejuri road, Maharashtra",
+  directionsUrl: "https://maps.app.goo.gl/Rpm3NE33j8dtgdB59?g_st=iw",
   audioSrc: "assets/audio/kulakovka-indian-295883.mp3", // Local wedding music track.
-  rsvpWhatsApp: "", // International digits only, e.g. 919876543210. Blank = RSVP is not configured.
   events: [
     {
-      date: "Date to be announced",
-      title: "Mehendi Ceremony",
-      time: "Time to be announced",
-      description: "An afternoon of henna, laughter and joyful traditions.",
-      dressCode: "Festive attire in your favourite colours",
-      venue: "Venue to be announced"
+      date: "9th December 2026",
+      title: "Engagement & Cocktail Ceremony",
+      time: "7:30 PM",
+      dressCode: "Classic western formals in Black or Red colour",
+      venue: "Lawn No.1"
     },
     {
-      date: "Date to be announced",
-      title: "Sangeet Celebration",
-      time: "Time to be announced",
-      description: "Join us for music, dancing and a night full of memories.",
-      dressCode: "Celebration-ready formal or traditional wear",
-      venue: "Venue to be announced"
+      date: "10th December 2026",
+      title: "Haldi Ceremony",
+      time: "10:30 AM",
+      dressCode: "Bright comfortable and casual ethnic wear in shades of yellow",
+      venue: "Pool Side"
     },
     {
-      date: "Date to be announced",
+      date: "10th December 2026",
       title: "Wedding Ceremony",
-      time: "Time to be announced",
-      description: "Together with our families, we invite you to witness our vows.",
-      dressCode: "Elegant traditional attire",
-      venue: "Venue to be announced"
+      time: "5:00 PM Onwards",
+      schedule: [
+        { title: "Assembly of Baraat", time: "5:00 PM" },
+        { title: "Varmala Ceremony followed by Vidhi", time: "6:40 PM to 8:00 PM" }
+      ],
+      dressCode: "Elegant traditional wear with vibrant fabrics",
+      venue: "Aai Museum",
+      note: "Venue being a fort, we recommend you to carry comfortable footwear."
     }
   ]
 };
@@ -82,11 +83,23 @@ WEDDING.events.forEach((event) => {
   date.append(makeElement('span', 'event-card__date-icon', '▦'), document.createTextNode(event.date));
   const title = makeElement('h3', '', event.title);
   const time = makeElement('p', 'event-card__time', `◷  ${event.time}`);
-  const description = makeElement('p', 'event-card__description', event.description);
   const dress = makeElement('div', 'event-card__dress');
-  dress.append(makeElement('strong', '', '✧  Dress code'), document.createTextNode(event.dressCode));
+  dress.append(makeElement('strong', '', '✨ Dress Code'), document.createTextNode(event.dressCode));
   const venue = makeElement('p', 'event-card__venue', `⌖  ${event.venue}`);
-  card.append(date, title, time, description, dress, venue);
+  card.append(date, title, time);
+  if (event.schedule?.length) {
+    const schedule = makeElement('div', 'event-card__schedule');
+    event.schedule.forEach((item) => {
+      const row = makeElement('div', 'event-card__schedule-item');
+      row.append(makeElement('span', '', item.title), makeElement('span', '', item.time));
+      schedule.append(row);
+    });
+    card.append(schedule);
+  }
+  card.append(dress, venue);
+  if (event.note) {
+    card.append(makeElement('p', 'event-card__note', `💡 Note for our guests: ${event.note}`));
+  }
   eventList.append(card);
 });
 
@@ -191,25 +204,5 @@ audio.addEventListener('error', () => {
   setMusicState(false);
   musicStatus.textContent = 'Music could not be loaded. Check the media URL or your connection.';
 });
+// RSVP is contact-only; guests use the telephone links in the page.
 
-const rsvpForm = document.getElementById('rsvp-form');
-const rsvpNote = document.getElementById('rsvp-note');
-rsvpForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const phone = WEDDING.rsvpWhatsApp.replace(/\D/g, '');
-  if (!phone) {
-    rsvpNote.textContent = 'RSVP is not connected yet. Add a WhatsApp number in script.js before sharing this invitation.';
-    return;
-  }
-  const formData = new FormData(rsvpForm);
-  const message = [
-    `Wedding RSVP for ${WEDDING.bride} & ${WEDDING.groom}`,
-    `Name: ${formData.get('name')}`,
-    `Attendance: ${formData.get('attendance')}`,
-    `Guests: ${formData.get('guests')}`,
-    formData.get('message') ? `Message: ${formData.get('message')}` : ''
-  ].filter(Boolean).join('\n');
-  const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-  rsvpNote.textContent = 'Your RSVP draft opened in WhatsApp. Please send it there; this website does not store responses.';
-});

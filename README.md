@@ -2,13 +2,13 @@
 
 A responsive, romantic wedding invitation made with plain HTML, CSS and vanilla JavaScript. It has no build step, backend, or required packages and can be hosted directly on GitHub Pages.
 
-> **Important:** All couple/event information in this project is example placeholder content. Update `script.js` before publishing. RSVP messages are not stored by this site.
+> **Important:** Couple names are still placeholders. Update them in `script.js` before publishing. RSVP is informational only; guests can call the listed contact numbers.
 
 ## Project files
 
 - `index.html` — semantic page structure, SEO/social metadata and type loading.
 - `style.css` — responsive styling, animations, color/type variables and reduced-motion support.
-- `script.js` — the editable `WEDDING` configuration, event cards, countdown, reveal effects, music and WhatsApp RSVP.
+- `script.js` — the editable `WEDDING` configuration, event cards, countdown, reveal effects and music.
 - `assets/images/mandala.svg` — original lightweight decorative illustration and favicon.
 - `assets/audio/` — optional folder for a music file you have permission to use.
 
@@ -20,7 +20,7 @@ Open `script.js` and edit the `WEDDING` object at the top:
 2. Set `weddingDateISO` to an ISO date/time with the correct local UTC offset, such as `2027-02-14T17:00:00+05:30`. Update the human-readable `dateLabel` to match. The countdown uses the ISO value.
 3. Replace `venue`, `address` and optionally `directionsUrl` with a Google Maps directions link. Leave the URL blank to keep the button hidden.
 4. Edit the `events` array. Each event has `date`, `title`, `time`, `description`, `dressCode`, and `venue` fields. Add/remove objects as needed.
-5. For WhatsApp RSVP, set `rsvpWhatsApp` to the recipient's international number using digits only, including country code (for example `919876543210`). It is intentionally blank by default. A guest's click opens a message draft; the guest must send the message in WhatsApp. No response is stored here.
+5. The RSVP section displays the supplied contact numbers as tap-to-call links. There is no RSVP form or response storage.
 6. The audio control uses `assets/audio/kulakovka-indian-295883.mp3` by default. Music starts when a guest opens the invitation (a deliberate tap/click), and the floating control toggles it off/on. To use another track, change `audioSrc` in `script.js` to a public audio URL or a relative asset path. If the media cannot load, playback stays off and the page remains usable.
 
 To use your own photos, replace the hero image URL in `index.html` with a relative path such as `assets/images/couple.jpg`, and update its alt text. Add optimized JPG/WebP images to `assets/images/`; keep the hero reasonably compressed and provide descriptive alt text. The current hero uses an external Unsplash image, so a local image is recommended for reliable/offline hosting. Social preview metadata in `index.html` should also be updated if you change the hero image.
@@ -43,7 +43,6 @@ Colors and fonts are defined at the top of `style.css` in `:root`. Google Fonts 
 - **Countdown is wrong:** Verify the ISO date, time and UTC offset in `weddingDateISO`, and ensure `dateLabel` matches. The countdown displays the visitor's remaining time to that instant.
 - **Directions are missing:** Add a valid Google Maps directions URL to `directionsUrl`. It is intentionally hidden when blank.
 - **Music does not play:** Add the MP3 at the configured path and test after a user presses the music button. Mobile browsers block autoplay; this invitation never starts audio without a tap.
-- **RSVP does not open WhatsApp:** Add the correct international phone digits to `rsvpWhatsApp`. This feature opens a prefilled draft only; it does not submit or securely store guest information. For private or permanent collection, use a properly configured external form provider.
 - **External hero image or Google Fonts unavailable:** The site still works with a CSS background fallback and system fonts. For reliable performance, put your own optimized photo in `assets/images/` and use local assets.
 
 ## Accessibility and privacy notes
