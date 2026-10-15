@@ -586,3 +586,148 @@ body {
 @media (max-width: 350px) {
   .rsvp-frame { padding-inline: 2.2rem; }
 }
+
+/* Distinct invitation pages: full-bleed sections with content allowed to grow. */
+.opening-page,
+.event-page,
+.venue-page,
+.rsvp-section,
+.site-footer {
+  width: 100vw;
+  margin-inline: calc((100% - 100vw) / 2);
+}
+.opening-page,
+.event-page,
+.venue-page,
+.rsvp-section { min-height: 100svh; }
+.opening-page { background: var(--ivory); }
+.event-page.celebration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-block: clamp(2rem, 5vh, 4rem);
+}
+.event-page .section-heading { margin-bottom: 1.5rem; }
+.event-page .event-list { width: min(100%, 720px); margin: 0 auto; }
+.event-page--haldi .event-card { --event-accent: #936312; }
+.event-page--wedding .event-card { --event-accent: var(--wedding-red); }
+.venue-page { display: grid; place-items: center; padding: 3rem 1rem; background: var(--ivory); }
+.venue-page .venue-card { margin: 0 auto; }
+.rsvp-section { min-height: 100svh; }
+.site-footer { padding-bottom: max(2rem, env(safe-area-inset-bottom)); }
+.site-footer__nav { display: flex; justify-content: center; flex-wrap: wrap; gap: .4rem 1.15rem; margin: 1.4rem auto .4rem; }
+.site-footer__nav a { color: #f9f3e6; font: 600 .64rem var(--display); letter-spacing: .08em; text-decoration-color: rgba(218,197,142,.65); text-underline-offset: .28rem; text-transform: uppercase; }
+.site-footer__nav a:hover { color: #dac58e; }
+
+/* Engagement & Cocktail — bespoke invitation artwork; replace the frame artwork URL below. */
+.event-page--engagement {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(3rem, 8vh, 6rem) clamp(2rem, 9vw, 7rem);
+  background: #570D32;
+  color: #3c241d;
+}
+.engagement-artwork { position: absolute; z-index: -1; inset: 0; pointer-events: none; }
+.engagement-artwork__border {
+  position: absolute;
+  inset: clamp(14px, 2.1vw, 30px);
+  border: 1px solid #B08D57;
+  background-color: #F5EBDD;
+  background-image: none;
+}
+.engagement-artwork__border::before {
+  position: absolute;
+  z-index: 1;
+  inset: 10px;
+  border: 1px solid rgba(176,141,87,.72);
+  content: '';
+}
+.engagement-artwork__border::after {
+  position: absolute;
+  inset: 0;
+  background: url('assets/images/jharokha-frame.svg') center / 100% 100% no-repeat;
+  content: '';
+  filter: sepia(1) saturate(1.35) hue-rotate(330deg) brightness(1.12);
+}
+.engagement-artwork__rings { position: absolute; top: clamp(4rem, 10vh, 6.5rem); left: 50%; width: 76px; height: 48px; transform: translateX(-50%); }
+.engagement-artwork__rings i { position: absolute; top: 5px; width: 39px; height: 39px; border: 1.5px solid #B08D57; border-radius: 50%; }
+.engagement-artwork__rings i:first-child { left: 7px; }
+.engagement-artwork__rings i:last-child { right: 7px; }
+.engagement-artwork__rings::after { position: absolute; top: 24px; left: 50%; width: 6px; height: 6px; border: 1px solid #B08D57; background: #F5EBDD; content: ''; transform: translate(-50%,-50%) rotate(45deg); }
+.engagement-heading { z-index: 1; max-width: 680px; margin: 4.1rem auto 1rem !important; }
+.engagement-heading .eyebrow { color: #795a37; }
+.engagement-heading .script-heading {
+  color: #570D32;
+  font: 500 clamp(2.05rem, 5.4vw, 3.8rem)/1.08 var(--serif);
+  letter-spacing: .015em;
+  text-wrap: balance;
+}
+.event-page--engagement .event-list { z-index: 1; max-width: 600px; }
+.event-page--engagement .event-card {
+  overflow: visible;
+  padding: .5rem 1rem 1rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+.event-page--engagement .event-card::before,
+.event-page--engagement .event-card::after { display: none; }
+.event-page--engagement .event-card__date {
+  justify-content: center;
+  color: #795a37;
+  font: 600 .9rem/1.5 var(--display);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.event-page--engagement .event-card__date-icon { display: none; }
+.event-page--engagement .event-card h3 {
+  max-width: none;
+  margin: .65rem 0 .35rem;
+  color: #570D32;
+  font: 600 clamp(1.55rem, 4vw, 2.1rem)/1.15 var(--serif);
+}
+.event-page--engagement .event-card__time { margin: .45rem 0 .9rem; color: #3c241d; font-size: 1.2rem; }
+.event-page--engagement .event-card__dress {
+  width: fit-content;
+  max-width: 100%;
+  margin: .9rem auto;
+  padding: .35rem .8rem;
+  border: 0;
+  border-block: 1px solid rgba(176,141,87,.7);
+  border-radius: 0;
+  background: transparent;
+  color: #3c241d;
+}
+.event-page--engagement .event-card__dress strong { display: inline; margin-right: .4rem; color: #570D32; font: 600 .72rem var(--display); letter-spacing: .1em; }
+.event-page--engagement .event-card__venue { margin-top: .75rem; color: #570D32; font: 600 1rem var(--display); }
+
+@media (max-width: 850px) {
+  .event-page.celebration { padding-inline: 1rem; }
+  .event-page--engagement { padding-inline: 1.5rem; }
+  .engagement-artwork__border { inset: 12px; background-size: 100% 100%; }
+  .engagement-artwork__border::before { inset: 8px; }
+  .engagement-heading { margin-top: 3.8rem !important; }
+  .event-page--engagement .event-card { padding-inline: .25rem; }
+}
+@media (max-width: 500px) {
+  .event-page.celebration { padding-block: 2.5rem; }
+  .event-page--engagement { padding: 3rem 1.25rem; }
+  .engagement-artwork__border { inset: 8px; }
+  .engagement-artwork__border::before { inset: 6px; }
+  .engagement-artwork__rings { top: 3.2rem; transform: translateX(-50%) scale(.85); }
+  .engagement-heading { margin: 3.2rem auto .6rem !important; }
+  .engagement-heading .script-heading { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+  .event-page--engagement .event-card__dress { font-size: .95rem; }
+  .event-page--engagement .event-card__dress strong { display: block; margin: 0 0 .15rem; }
+  .site-footer__nav { gap: .5rem .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .event-page--engagement *, .event-page--engagement *::before, .event-page--engagement *::after { animation: none !important; }
+}

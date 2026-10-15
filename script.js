@@ -72,7 +72,11 @@ const socialDescription = document.querySelector('meta[property="og:description"
 if (socialTitle) socialTitle.content = document.title;
 if (socialDescription) socialDescription.content = metaDescription.content;
 
-const eventList = document.getElementById('event-list');
+const eventLists = {
+  haldi: document.getElementById('event-list-haldi'),
+  engagement: document.getElementById('event-list-engagement'),
+  wedding: document.getElementById('event-list-wedding')
+};
 const makeElement = (tag, className, text) => {
   const element = document.createElement(tag);
   if (className) element.className = className;
@@ -103,7 +107,8 @@ WEDDING.events.forEach((event) => {
   if (event.note) {
     card.append(makeElement('p', 'event-card__note', `Note for our guests: ${event.note}`));
   }
-  eventList.append(card);
+  const target = eventLists[event.theme];
+  if (target) target.append(card);
 });
 
 const directionsLink = document.getElementById('directions-link');
