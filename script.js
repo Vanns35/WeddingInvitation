@@ -43,7 +43,7 @@ const WEDDING = {
       ],
       dressCode: "Elegant traditional wear with vibrant fabrics",
       venue: "Aai Museum",
-      note: "Venue being a fort, we recommend you to carry comfortable footwear."
+      note: "Venue being a fort, \nwe recommend you to carry comfortable footwear."
     }
   ]
 };
