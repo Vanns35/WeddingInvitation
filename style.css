@@ -245,7 +245,7 @@ body {
 /* Cover is an open invitation sheet: artwork frames the typography, no card surface. */
 .invitation-cover {
   background: var(--ivory);
-  background-image: radial-gradient(ellipse at 50% 0%, rgba(217,161,38,.10), transparent 45%);
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(217,161,38,.10), transparent 60%);
 }
 .cover-panel {
   display: flex;
@@ -411,7 +411,8 @@ body {
   padding: 4rem clamp(2.5rem, 8vw, 5rem);
   border: 0;
   border-radius: 0;
-  background: url('assets/images/jharokha-frame.svg') center / 100% 100% no-repeat;
+  /* background: url('assets/images/jharokha-frame.svg') center / 100% 100% no-repeat; */
+  filter: blur(0.5px) brightness(0.95);
   box-shadow: none;
 }
 .venue-card::before { display: none; }
@@ -434,7 +435,8 @@ body {
   overflow: visible;
   border: 0;
   outline: 0;
-  background: url('assets/images/jharokha-frame.svg') center / 100% 100% no-repeat;
+  /* background: url('assets/images/jharokha-frame.svg') center / 100% 100% no-repeat; */
+  filter: blur(0.5px) brightness(0.95);
   box-shadow: none;
 }
 .rsvp-frame__mandala { display: none; }
@@ -783,6 +785,7 @@ body {
   padding: clamp(2rem, 6vh, 4rem) clamp(1.5rem, 7vw, 3rem);
   background-color: #e9d3ad;
   background-image: url('assets/images/venue.jpg');
+  filter: blur(0.5px) brightness(0.95);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -863,6 +866,7 @@ body {
   padding: clamp(2rem, 6vh, 4rem) clamp(1.5rem, 7vw, 3rem);
   background-color: #fff6d9;
   background-image: url('assets/images/Haldi.jpg');
+  filter: blur(0.5px) brightness(0.95);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -921,6 +925,7 @@ body {
   padding: clamp(2rem, 6vh, 4rem) clamp(1.5rem, 7vw, 3rem);
   background-color: #f5ebdd;
   background-image: url('assets/images/Engagement.jpg');
+  filter: blur(0.5px) brightness(0.95);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -979,6 +984,7 @@ body {
   padding: clamp(1.75rem, 5vh, 3.5rem) clamp(1.25rem, 6vw, 2.5rem);
   background-color: #f4e2c8;
   background-image: url('assets/images/Wedding.jpg');
+  filter: blur(0.5px) brightness(0.95);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1124,6 +1130,7 @@ body {
   padding: 0 1rem max(24px, 5svh);
   background-color: #f8f1e8;
   background-image: url('assets/images/Main.jpg');
+  filter: blur(0.5px) brightness(0.95);
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1197,6 +1204,7 @@ body {
   width: min(100%, 500px);
   height: 100%;
   background: #f5ebdd url('assets/images/Invitation.png') center top / cover no-repeat;
+  filter: blur(0.5px) brightness(0.95);
   content: '';
   transform: translateX(-50%);
 }
